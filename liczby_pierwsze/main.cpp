@@ -14,14 +14,15 @@ bool czy_pierwsza(int liczba){
         return true;
     }
 }
+//Tablica do zad #1 - znajdz liczby pierwsze w zbiorze
+int tab[13] = {-1,-7,-22,0,1,2,3,4,5,55,89,113,1001};
 
 int main()
 {
-    for(int i = 3; i < 10; i++){
-        if(czy_pierwsza(i)){
-           cout<<"liczba "<<i<<" jest pierwsza"<<endl;
-        }else{
-            cout<<"liczba "<<i<<" nie jest pierwszaa"<<endl;
+    cout<<"Liczby pierwsze w podanym zbiorze to: "<<endl;
+    for(int i = 0; i < 13; i++){
+        if(czy_pierwsza(tab[i])){
+           cout<<tab[i]<<endl;
         }
     }
     return 0;
