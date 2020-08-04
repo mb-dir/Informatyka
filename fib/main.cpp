@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 int liczba_do_sprawdzenia;
 
@@ -22,17 +22,19 @@ int fib_iteracyjnie(int ktory){
 }
 
 //fibonaci iteracyjnie - sprawdzenie czy dana liczba nale¿y do ci¹gu
+//funkcja pomocnicza
+bool isPerfectSquare(int x){
+    int s = sqrt(x);
+
+    return (x%s == 0);
+}
+
 void czy_nalezy(int liczba){
-    int a, b=1;
-    for(int i = 1; i < liczba; i++){
-        b+=a;
-        if(b == liczba){
-           cout<<liczba<<" nalezy do ciagu i jest to "<< i <<" wyraz";
-           return;
-        }
-        a=b-a;
-    }
-    cout<<liczba<<" nie nalezy do ciagu";
+   if((isPerfectSquare((5 * liczba * liczba) - 4)) || (isPerfectSquare((5 * liczba * liczba) + 4))){
+    cout<<"Liczba: "<<liczba<<" nalezy";
+   }else{
+    cout<<"Nie, liczba: "<<liczba<<" nie nalezy";
+   }
 }
 int main()
 {
