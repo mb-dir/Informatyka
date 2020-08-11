@@ -42,6 +42,23 @@ int fib_iteracyjne(int a){
     }
     return y;
 }
+
+//Funkcja nr 4 - silnia
+int silnia(int ktory){
+    if(ktory <= 1 && ktory > -1){
+        return 1;
+    }else{
+        return ktory*silnia(ktory-1);
+    }
+}
+//Funkcja nr 4a - silnia iteracja
+int silnia_iteracyjnie(int ktory){
+    int silnia = 1;
+    for(int i = 1; i <= ktory; i++){
+        silnia*=i;
+    }
+    return silnia;
+}
 int main()
 {
     //sprawdzenie potegowania
@@ -58,6 +75,14 @@ int main()
     }
     for(int i = 1; i <= 10; i++){
         cout<<"Wyraz nr: "<<i<<" to "<<fib_iteracyjne(i)<<endl;
+    }
+
+    //sprawdzenie silni
+    for(int i = 0; i <= 10; i++){
+        cout<<"Silnia: "<<i<<" to "<<silnia(i)<<endl;
+    }
+    for(int i = 0; i <= 10; i++){
+        cout<<"Silnia: "<<i<<" to "<<silnia_iteracyjnie(i)<<endl;
     }
     return 0;
 }
