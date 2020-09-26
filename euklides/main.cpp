@@ -4,7 +4,7 @@ using namespace std;
 
 int x,y;
 
-void euklides(int x, int y){
+int euklides(int x, int y){
     int a;
 
     while(y!=0){
@@ -12,15 +12,21 @@ void euklides(int x, int y){
         y=x%y;
         x=a;
     }
-    cout<<x;
+    return x;
 }
 
+void nww(int x, int y){
+    int nwd = euklides(x,y);
+
+    cout<<(x*y)/nwd;
+}
 int main()
 {
     cout << "Podaj dwie liczby do obliczenia NWD" << endl;
     cin>>x;
     cin>>y;
 
-    euklides(x,y);
+    cout<<euklides(x,y)<<endl;
+    nww(x,y);
     return 0;
 }
