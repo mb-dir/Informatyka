@@ -1,12 +1,12 @@
 #include <iostream>
 
 using namespace std;
-
+string a = "a";
 string wyraz;
 
 bool czy_palindrom(string wyraz){
     for(int i = 0, j = wyraz.length()-1; i < j; i++, j--){
-        if (wyraz[i] != wyraz[j]){
+        if ((toupper(wyraz[i])) != (toupper(wyraz[j]))){
             return false;
         }
     }
