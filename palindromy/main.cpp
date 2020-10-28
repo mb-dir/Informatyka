@@ -2,7 +2,6 @@
 #include <fstream>
 
 using namespace std;
-string wyraz;
 
 //Funkcja sprawdzajaca czy wyraz jest palindromem
 bool czy_palindrom(string wyraz){
@@ -25,8 +24,6 @@ int main()
     //otworzenie pliku
     plik.open("slowa.txt", ios::in);
 
-    //licznik do petli while
-    int licznik=0;
 
     while(!plik.eof())
     {
