@@ -1,9 +1,10 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
-string a = "a";
 string wyraz;
 
+//Funkcja sprawdzajaca czy wyraz jest palindromem
 bool czy_palindrom(string wyraz){
     for(int i = 0, j = wyraz.length()-1; i < j; i++, j--){
         if ((toupper(wyraz[i])) != (toupper(wyraz[j]))){
@@ -15,14 +16,33 @@ bool czy_palindrom(string wyraz){
 
 int main()
 {
-    cout << "wprowadz wyraz" << endl;
-    cin>>wyraz;
 
-    if(czy_palindrom(wyraz)){
-        cout<<"Wyraz '"<<wyraz<<"' jest palindromem"<<endl;
-    }else{
-        cout<<"Wyraz '"<<wyraz<<"' nie jest palindromem"<<endl;
+    cout<<"PROCES SPRAWDZANIA ZAKONCZONY";
+
+    //zmienne otwieranie pliku
+    string linia;
+    fstream plik;
+    //otworzenie pliku
+    plik.open("slowa.txt", ios::in);
+
+    //licznik do petli while
+    int licznik=0;
+
+    while(!plik.eof())
+    {
+        getline(plik, linia);
+        if(czy_palindrom(linia)){
+
+            //zapis do pliku zad4.txt jesli slowo jest palindromem
+            fstream plik_zapis;
+            plik_zapis.open("zad4.txt",ios::out | ios::app);
+            plik_zapis<<linia<<endl;
+
+            plik_zapis.close();
+        }
     }
+
+    plik.close();
 
     return 0;
 }
