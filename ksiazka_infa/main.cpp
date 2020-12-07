@@ -33,17 +33,20 @@ int main()
     cout<<"Podaj cene: ";
     cin>>cena;
 
+    cout<<endl;
 
-    ksiazka Hobbit; //tworzenie obiektu struktury o nazwie Hobbit;
+    ksiazka moja_ksiazka;
 
-    Hobbit.tytul = tytul;
-    Hobbit.autor = autor;
-    Hobbit.rokwydania = rok_wydania;
-    Hobbit.wydawnictwo = wydawnictwo;
-    Hobbit.cena = cena;
+    moja_ksiazka.tytul = tytul;
+    moja_ksiazka.autor = autor;
+    moja_ksiazka.rokwydania = rok_wydania;
+    moja_ksiazka.wydawnictwo = wydawnictwo;
+    moja_ksiazka.cena = cena;
 
-    cout << "Cena ksiazki to: "<< Hobbit.cena<< endl;
+    cout << "Tytul ksiazki to: "<< moja_ksiazka.tytul<< endl;
+    cout << "Autor ksiazki to: "<< moja_ksiazka.autor<< endl;
+    cout << "Rok wydania ksiazki to: "<< moja_ksiazka.rokwydania<< endl;
+    cout << "Wydawnictwo ksiazki to: "<< moja_ksiazka.wydawnictwo<< endl;
+    cout << "Cena ksiazki to: "<< moja_ksiazka.cena<< endl;
     return 0;
 }
-
-
