@@ -1,0 +1,5 @@
+Tytul: 1
+Autor: 1
+Rok wydania: 1
+Wydawnictwo: 1
+Cena: 1
