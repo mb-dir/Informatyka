@@ -1,5 +1,0 @@
-Tytul: 5
-Autor: 5
-Rok wydania: 5
-Wydawnictwo: 5
-Cena: 5

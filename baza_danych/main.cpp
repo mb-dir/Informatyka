@@ -2,8 +2,6 @@
 #include <string.h>
 #include <fstream>
 #include <stdio.h>
-#include <sys/types.h>
-#include <dirent.h>
 
 
 using namespace std;
@@ -32,20 +30,25 @@ void dodaj_ksiazke(){
 
     cout<<"Podaj autora: ";
     cin>>autor;
+    cin.ignore();
 
     cout<<"Podaj tytul: ";
     cin>>tytul;
+    cin.ignore();
 
     cout<<"Podaj rok wydania: ";
     cin>>rok_wydania;
+    cin.ignore();
 
     cout<<"Podaj wydawnictwo: ";
     cin>>wydawnictwo;
+    cin.ignore();
 
     cout<<"Podaj cene: ";
     cin>>cena;
+    cin.ignore();
 
-    cout<<endl;
+
 
     ksiazka moja_ksiazka;
 
@@ -73,6 +76,9 @@ void dodaj_ksiazke(){
 }
 
 void pokaz_ksiazki(){
+
+    cout<<"*******************BIBLIOTEKA********************"<<endl;
+
     int i=0;
     string tytul;
     fstream ksiazki;
@@ -84,22 +90,95 @@ void pokaz_ksiazki(){
         if(tytul != ""){
             i++;
             cout<<"Ksiazka nr "<<i<<" ma tytul: "<<tytul<<endl;
-        }else{
-            break;
         }
     }
 
     ksiazki.close();
 }
 
+void pokaz_dokladne_info_o_ksiazce(){
+
+    cout<<"*******************DOKLADNE INFORMACJE********************"<<endl;
+
+    string linia, tytul;
+    fstream ksiazka_info;
+
+    cout<<"Podaj interesujacy cie tytul: ";
+    cin>>tytul;
+    cin.ignore();
+
+    ksiazka_info.open("./biblioteka/"+tytul+".txt", ios::in);
+    if(!ksiazka_info.good()){
+        cout<<"Brak ksiazki o podanym tytule"<<endl;
+        return;
+    }
+    while(!ksiazka_info.eof()){
+        getline(ksiazka_info, linia);
+        cout<<linia<<endl;
+    }
+
+    ksiazka_info.close();
+}
+
+void usun(){
+    string tytul, linia, linia1;
+    cout<<"Podaj tytul: ";
+    cin>>tytul;
+    cin.ignore();
+
+    fstream ksiazki_stan_nowy;
+    fstream ksiazki_stan1;
+    fstream ksiazki_stan;
+    ksiazki_stan.open("./biblioteka/stan.txt", ios::in);
+    ksiazki_stan1.open("./biblioteka/stan1.txt", ios::out);
+    while(!ksiazki_stan.eof()){
+        getline(ksiazki_stan, linia);
+
+
+        if(!(linia == tytul)){
+            ksiazki_stan1<<linia<<endl;
+        }
+
+    }
+
+    ksiazki_stan.close();
+    ksiazki_stan1.close();
+
+
+    remove("./biblioteka/stan.txt");
+
+    ksiazki_stan_nowy.open("./biblioteka/stan.txt", ios::out);
+    ksiazki_stan1.open("./biblioteka/stan1.txt", ios::in);
+
+    while(!ksiazki_stan1.eof()){
+        getline(ksiazki_stan1, linia1);
+        ksiazki_stan_nowy<<linia1<<endl;
+    }
+
+    ksiazki_stan1.close();
+
+    remove("./biblioteka/stan1.txt");
+
+    ksiazki_stan_nowy.close();
+
+    string s = "./biblioteka/"+tytul+".txt";
+
+    remove(s.c_str());
+
+}
+
 void menu(){
     int x = 0;
-    while(x>2 || x<1){
-        cout<<"*******************MENU********************"<<endl;
-        cout<<"1.Dodawaj ksiazke"<<endl;
+    while(x>>5 || x<1){
+        cout<<"*******************MENU - Pamietaj aby przy wprowadzaniu danych znak spacji zastapic _********************"<<endl;
+        cout<<"1.Dodaj ksiazke"<<endl;
         cout<<"2.Pokaz biblioteke"<<endl;
+        cout<<"3.Pokaz dokladne informacje"<<endl;
+        cout<<"4.Usun"<<endl;
+        cout<<"5.Zakoncz"<<endl;
         cout<<"Wybieram : ";
         cin>>x;
+        cin.ignore();
         system("cls");
      }
 
@@ -111,6 +190,17 @@ void menu(){
        case 2:
            pokaz_ksiazki();
            menu();
+        break;
+        case 3:
+           pokaz_dokladne_info_o_ksiazce();
+           menu();
+        break;
+        case 4:
+           usun();
+           menu();
+        break;
+        case 5:
+           exit(0);
         break;
 
     }

@@ -1,5 +1,5 @@
-Tytul: 2
-Autor: 2
+Tytul: w
+Autor: w
 Rok wydania: 2
 Wydawnictwo: 2
 Cena: 2

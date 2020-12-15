@@ -1,5 +1,5 @@
-Tytul: 1
-Autor: 1
+Tytul: g
+Autor: g
 Rok wydania: 1
 Wydawnictwo: 1
 Cena: 1
