@@ -36,12 +36,21 @@ int czy_pierwiastek_jest_liczba_pierwsza(int a){
 
 int main()
 {
-    cout << "Podaj liczbe" << endl;
-    cin>>liczba;
+    fstream liczby, zad5;
+    string liczba;
+    liczby.open("./liczby.txt", ios::in);
 
-    if(czy_pierwiastek_jest_liczba_pierwsza(liczba)){
-        cout<<"jd";
+    while(!liczby.eof()){
+        getline(liczby, liczba);
+        if(czy_pierwiastek_jest_liczba_pierwsza(std::stoi(liczba))){
+            zad5.open("./zad5.txt", ios::out);
+            zad5<<liczba<<endl;
+
+            zad5.close();
+        }
     }
+
+    liczby.close();
 
     getchar();
     getchar();
