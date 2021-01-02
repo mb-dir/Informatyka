@@ -1,9 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 using namespace std;
 
+
+//zad1
 int tabX[10000], tabY[10000];
 
 bool czy_punkt_nalezy_do_kola(int x, int y){
@@ -28,8 +31,13 @@ bool czy_punkt_nalezy_do_brzegu_kola(int x, int y){
     }
 }
 
+
+//zda2
+
+
 int main()
 {
+    //zad1
     fstream punkty;
     string wspolrzedna;
     string x,y;
@@ -60,6 +68,11 @@ int main()
             ilosc+=1;
         }
     }
-    cout<<ilosc;
+    cout<<ilosc<<endl;
+    float nkn1 = (float)ilosc/(float)2500;
+
+
+    cout<<"ZAD2"<<endl;
+    std::cout << std::setprecision(5) << nkn1 << '\n';
     return 0;
 }
