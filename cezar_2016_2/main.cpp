@@ -18,11 +18,12 @@ string odszyfrowanie_cezar(string slowo, int klucz){
 }
 int main()
 {
-    fstream dane;
+    fstream dane, wynik;
     string linia, slowo;
     int klucz;
 
-    dane.open("./dane_6_2.txt");
+    dane.open("./dane_6_2.txt", ios::in);
+    wynik.open("./wyniki_6_2.txt", ios::out);
 
     while(!dane.eof()){
         getline(dane, linia);
@@ -32,11 +33,9 @@ int main()
         sString >> slowo;
         sString >> klucz;
 
-        cout<<slowo<<" | ";
-        cout<<klucz<<endl;
+        wynik<<odszyfrowanie_cezar(slowo, klucz)<<endl;
     }
 
     dane.close();
-    cout<<odszyfrowanie_cezar("BCYKUNCM", 1718);
     return 0;
 }
