@@ -4,6 +4,18 @@
 
 using namespace std;
 
+string odszyfrowanie_cezar(string slowo, int klucz){
+    int k = klucz%26;
+
+    for(int i = 0; i <= slowo.length()-1; i++){
+        if(slowo[i]-k < 65){
+            slowo[i] = slowo[i]-k+26;
+        }else{
+            slowo[i] = slowo[i]-k;
+        }
+    }
+    return slowo;
+}
 int main()
 {
     fstream dane;
@@ -25,5 +37,6 @@ int main()
     }
 
     dane.close();
+    cout<<odszyfrowanie_cezar("BCYKUNCM", 1718);
     return 0;
 }
