@@ -33,9 +33,10 @@ bool czy_pasuje(string slowo, string szyfrogram){
 int main()
 {
 
-    fstream dane;
+    fstream dane, wynik;
     string linia, slowo, szyfrogram;
     dane.open("./dane_6_3.txt", ios::in);
+    wynik.open("./wyniki_6_3.txt", ios::out);
 
     while(!dane.eof()){
         getline(dane, linia);
@@ -47,12 +48,13 @@ int main()
         if(czy_pasuje(slowo, szyfrogram)){
 
         }else{
-            cout<<slowo<<" "<<szyfrogram<<endl;
+            wynik<<slowo<<endl;
         }
 
     }
 
     dane.close();
+    wynik.close();
 
 
     getchar();
