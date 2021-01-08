@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-int x, suma_dzielnikow=1;
+int x, suma_dzielnikow=1, liczba_do_sprawdzenia, liczba_do_sprawdzenia_suma_dzielnikow=1;
 int main()
 {
     cout << "liczba" << endl;
@@ -13,7 +13,20 @@ int main()
         }
     }
 
-    cout<<suma_dzielnikow;
+    liczba_do_sprawdzenia = suma_dzielnikow-1;
+
+    for(int i = 2; i <= (liczba_do_sprawdzenia/2); i++){
+        if(liczba_do_sprawdzenia%i == 0){
+            liczba_do_sprawdzenia_suma_dzielnikow+=i;
+        }
+    }
+
+
+    if(liczba_do_sprawdzenia_suma_dzielnikow-1 == x){
+        cout<<liczba_do_sprawdzenia;
+    }else{
+        cout<<"Nie";
+    }
 
     getchar();
     getchar();
