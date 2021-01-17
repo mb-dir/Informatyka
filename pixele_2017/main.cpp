@@ -63,6 +63,28 @@ int main()
             }
         }
     }
-    cout<<b;
+    //cout<<b;
+
+    //Zad 6.4
+    int longestLine = 1;
+    for(int i = 0;i<320;i++) {
+        int longestInColumn = 1;
+        int actLongestInColumn = 1;
+        for(int j = 0;j<199;j++) {
+            if(tab[j][i]==tab[j+1][i]) actLongestInColumn++;
+            else {
+                if(longestInColumn<actLongestInColumn) {
+                    longestInColumn = actLongestInColumn;
+                }
+                actLongestInColumn = 1;
+            }
+        }
+        if(longestLine<longestInColumn) {
+            longestLine = longestInColumn;
+            longestInColumn = 1;
+        }
+    }
+    cout<<longestLine;
+
     return 0;
 }
