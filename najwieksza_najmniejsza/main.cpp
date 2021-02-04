@@ -7,7 +7,7 @@ int najwieksza, najmniejsza;
 
 void znajdz_najwieksza(int *tab){
     najwieksza = tab[0];
-    for(int i = 0; i < 10; i++){
+    for(int i = 1; i < 10; i++){
         if(najwieksza < tab[i]){
             najwieksza = tab[i];
         }
@@ -16,7 +16,7 @@ void znajdz_najwieksza(int *tab){
 
 void znajdz_najmniejsza(int *tab){
     najmniejsza = tab[0];
-    for(int i = 0; i < 10; i++){
+    for(int i = 1; i < 10; i++){
         if(najmniejsza > tab[i]){
             najmniejsza = tab[i];
         }
