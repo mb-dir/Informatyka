@@ -17,6 +17,12 @@ bool czy_pierwisza(int a){
 }
 int main()
 {
-    cout << czy_pierwisza(7) << endl;
+    for(int n = 1; n <10000; n++){
+        if(czy_pierwisza(n)){
+            cout<<"TAK"<<endl;
+        }else{
+            cout<<"NIE"<<endl;
+        }
+    }
     return 0;
 }
