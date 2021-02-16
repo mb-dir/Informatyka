@@ -12,9 +12,16 @@ long double silnia(int a){
     }
 }
 
+void liczba_jednosci_dziesiatek(int a){
+    for(int i = 0; i < 2; i++){
+        cout<<a%10<<" ";
+        a/=10;
+    }
+}
+
 int main()
 {
     cin>>n;
-    cout<<silnia(n);
+    liczba_jednosci_dziesiatek(silnia(n));
     return 0;
 }
