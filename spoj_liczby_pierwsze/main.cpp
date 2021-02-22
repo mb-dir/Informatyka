@@ -2,20 +2,23 @@
 #include <math.h>
 
 using namespace std;
-bool czy_pierwsza(int n)
+int n,t;
+bool czy_pierwsza(int x)
 {
-	if(n<2)
+	if(x<2)
 		return false; //gdy liczba jest mniejsza ni¿ 2 to nie jest pierwsz¹
 
-	for(int i=2;i*i<=n;i++)
-		if(n%i==0)
+	for(int i=2;i*i<=x;i++)
+		if(x%i==0)
 			return false; //gdy znajdziemy dzielnik, to dana liczba nie jest pierwsza
 	return true;
 }
 int main()
 {
-    for(int n = 1; n <10000; n++){
-        if(czy_pierwsza(n)){
+    cin>>n;
+    for(int i = 0; i < n; i++){
+        cin>>t;
+        if(czy_pierwsza(t)){
             cout<<"TAK"<<endl;
         }else{
             cout<<"NIE"<<endl;
