@@ -26,7 +26,11 @@ int main()
     cin>>n;
     for(int i = 0; i < n; i++){
         cin>>t;
-        liczba_jednosci_dziesiatek(silnia(t));
+        if(t < 10){
+            liczba_jednosci_dziesiatek(silnia(t));
+        }else{
+            cout<<"0"<<" "<<"0"<<endl;
+        }
     }
     return 0;
 }
