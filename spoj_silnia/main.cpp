@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int n;
+int n,t;
 
 long double silnia(int a){
     if(a <= 1){
@@ -14,7 +14,11 @@ long double silnia(int a){
 
 void liczba_jednosci_dziesiatek(int a){
     for(int i = 0; i < 2; i++){
-        cout<<a%10<<" ";
+        if(i!=1){
+            cout<<a%10<<" ";
+        }else{
+            cout<<a%10<<endl;
+        }
         a/=10;
     }
 }
@@ -22,6 +26,9 @@ void liczba_jednosci_dziesiatek(int a){
 int main()
 {
     cin>>n;
-    liczba_jednosci_dziesiatek(silnia(n));
+    for(int i = 0; i < n; i++){
+        cin>>t;
+        liczba_jednosci_dziesiatek(silnia(t));
+    }
     return 0;
 }
