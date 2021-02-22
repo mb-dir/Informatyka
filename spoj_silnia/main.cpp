@@ -13,14 +13,12 @@ long double silnia(int a){
 }
 
 void liczba_jednosci_dziesiatek(int a){
+    int tab[2];
     for(int i = 0; i < 2; i++){
-        if(i!=1){
-            cout<<a%10<<" ";
-        }else{
-            cout<<a%10<<endl;
-        }
+        tab[i] = a%10;
         a/=10;
     }
+    cout<<tab[1]<<" "<<tab[0]<<endl;
 }
 
 int main()
