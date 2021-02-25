@@ -1,12 +1,19 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-int skalar = ( std::rand() % 50 ) + 1, kolumny =( std::rand() % 50 ) + 1, wiersze =( std::rand() % 50 ) + 1, x;
+int skalar, kolumny, wiersze, x;
 
 int main()
 {
+    srand( time( NULL ) );
+    skalar = ( std::rand() % 20 ) + 1;
+    kolumny = ( std::rand() % 20 ) + 1;
+    wiersze = ( std::rand() % 20 ) + 1;
+
+
     cout<<"SKALAR: "<<skalar<<endl;
 
     int tab[kolumny][wiersze];
