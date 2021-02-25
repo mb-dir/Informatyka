@@ -1,28 +1,19 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
-int skalar, kolumny, wiersze, x;
+int skalar = ( std::rand() % 50 ) + 1, kolumny =( std::rand() % 50 ) + 1, wiersze =( std::rand() % 50 ) + 1, x;
 
 int main()
 {
-    cout<<"Podaj skalar: ";
-    cin>>skalar;
-
-    cout<<"Ilosc kolumn: ";
-    cin>>kolumny;
-
-    cout<<"Podaj wierszy: ";
-    cin>>wiersze;
-
+    cout<<"SKALAR: "<<skalar<<endl;
 
     int tab[kolumny][wiersze];
 
     for(int i = 0; i < wiersze; i++){
         for(int j = 0; j < kolumny; j++){
-            cout<<"Podaj element: ["<<i+1<<","<<j+1<<"]"<<endl;
-            cin>>x;
-            tab[j][i] = x;
+            tab[j][i] =( std::rand() % 50 ) + 1;
         }
     }
     cout<<endl;
