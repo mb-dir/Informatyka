@@ -26,6 +26,7 @@ int main()
         }
     }
     cout<<endl;
+    cout<<"Macierz przed"<<endl;
     for(int i = 0; i < wiersze; i++){
         for(int j = 0; j < kolumny; j++){
             if(j == kolumny - 1){
@@ -35,5 +36,27 @@ int main()
             }
         }
     }
+    cout<<endl;
+
+    int tab_skalar[kolumny][wiersze];
+
+    for(int i = 0; i < wiersze; i++){
+        for(int j = 0; j < kolumny; j++){
+            tab_skalar[j][i] = skalar*tab[j][i];
+        }
+    }
+
+    cout<<endl;
+    cout<<"Macierz po"<<endl;
+    for(int i = 0; i < wiersze; i++){
+        for(int j = 0; j < kolumny; j++){
+            if(j == kolumny - 1){
+                cout<<tab_skalar[j][i]<<endl;
+            }else{
+                cout<<tab_skalar[j][i]<<" ";
+            }
+        }
+    }
+
     return 0;
 }
