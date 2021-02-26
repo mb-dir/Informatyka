@@ -41,6 +41,16 @@ int main()
     }
 
 
-
+        cout<<endl;
+    cout<<"Macierz po"<<endl;
+    for(int i = 0; i < kolumny; i++){
+        for(int j = 0; j < wiersze; j++){
+            if(j == wiersze - 1){
+                cout<<new_tab[j][i]<<endl;
+            }else{
+                cout<<new_tab[j][i]<<" ";
+            }
+        }
+    }
     return 0;
 }
