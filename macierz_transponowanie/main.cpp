@@ -31,5 +31,16 @@ int main()
             }
         }
     }
+
+    int new_tab[wiersze][kolumny];
+
+    for(int i = 0; i < kolumny; i++){
+        for(int j = 0; j < wiersze; j++){
+            new_tab[j][i] = tab[i][j];
+        }
+    }
+
+
+
     return 0;
 }
