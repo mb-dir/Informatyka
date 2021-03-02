@@ -8,16 +8,27 @@ int kolumny, wiersze, x;
 
 int main()
 {
-    srand( time( NULL ) );
-    kolumny = ( std::rand() % 5 ) + 1;
-    wiersze = ( std::rand() % 5 ) + 1;
+    //srand( time( NULL ) );
+    //kolumny = ( std::rand() % 5 ) + 1;
+    //wiersze = ( std::rand() % 5 ) + 1;
+
+    cout<<"Ilosc kolumn: ";
+    cin>>kolumny;
+
+    cout<<"Podaj wierszy: ";
+    cin>>wiersze;
+
 
 
     int tab[kolumny][wiersze];
 
     for(int i = 0; i < wiersze; i++){
         for(int j = 0; j < kolumny; j++){
-            tab[j][i] =( std::rand() % 50 ) + 1;
+            //tab[j][i] =( std::rand() % 50 ) + 1;
+
+            cout<<"Podaj element: ["<<i+1<<","<<j+1<<"]"<<endl;
+            cin>>x;
+            tab[j][i] = x;
         }
     }
     cout<<endl;
