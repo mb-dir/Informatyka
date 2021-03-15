@@ -23,6 +23,7 @@ bool czy_pierwsza(int a){
 }
 
 void hipotezaG(int a){
+    fstream wyniki;
     int maxr = 0;
     int r = 0;
     int para_liczb[2];
@@ -38,7 +39,9 @@ void hipotezaG(int a){
                 }
             }
         }
-        cout<<para_liczb[0]<<" "<<para_liczb[1]<<endl;
+        wyniki.open("./wyniki4.txt", ios::out | ios::app);
+        wyniki<<para_liczb[0]<<" "<<para_liczb[1]<<endl;
+        wyniki.close();
     }
 
 }
