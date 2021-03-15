@@ -66,8 +66,5 @@ int main()
 
     pary.close();
 
-    for(int i = 0; i < 100; i++){
-        cout<<liczby[i]<<endl;
-    }
     return 0;
 }
