@@ -40,7 +40,7 @@ void hipotezaG(int a){
             }
         }
         wyniki.open("./wyniki4.txt", ios::out | ios::app);
-        wyniki<<para_liczb[0]<<" "<<para_liczb[1]<<endl;
+        wyniki<<a<<" "<<para_liczb[0]<<" "<<para_liczb[1]<<endl;
         wyniki.close();
     }
 
