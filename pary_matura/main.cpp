@@ -38,14 +38,14 @@ void hipotezaG(int a){
                 }
             }
         }
+        cout<<para_liczb[0]<<" "<<para_liczb[1]<<endl;
     }
-    cout<<para_liczb[0]<<" "<<para_liczb[1]<<endl;
+
 }
 
 
 int main()
 {
-    hipotezaG(24);
     fstream pary;
 
     pary.open("./pary.txt", ios::in);
@@ -55,6 +55,8 @@ int main()
         stringstream sString(s);
         sString >> liczby[i];
         sString >> wyrazy[i];
+
+        hipotezaG(liczby[i]);
 
         i++;
     }
