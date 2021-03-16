@@ -66,5 +66,12 @@ int main()
 
     pary.close();
 
+
+    //zad2
+    for(int i = 0; i <100; i++){
+        cout<<wyrazy[i]<<endl;
+    }
+
+
     return 0;
 }
