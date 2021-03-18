@@ -50,8 +50,8 @@ void hipotezaG(int a){
 //zad2
 
 void zad2(string s){
-    string ciag;
-    string ciagOk;
+    string ciag="";
+    string ciagOk="";
     int maxC = 1;
     int maxTest = 1;
 
@@ -65,15 +65,12 @@ void zad2(string s){
                 maxTest = 1;
                 ciagOk = ciag;
                 ciag = "";
+                ciagOk+=ciagOk[0];
             }
         }
     }
 
-    do{
-        ciagOk+=ciagOk[0];
-    }while(0);
-    cout<<ciagOk<<endl;
-    cout<<maxC;
+    cout<<ciagOk<<" "<<maxC<<endl;
 }
 
 
@@ -98,9 +95,8 @@ int main()
 
 
     //zad2
-    zad2("GgggGAaaA");
     for(int i = 0; i <100; i++){
-        //zad2(wyrazy[i]);
+        zad2(wyrazy[i]);
     }
 
     return 0;
