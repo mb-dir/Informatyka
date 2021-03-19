@@ -7,24 +7,30 @@ int k = 3;
 int tab1[5] = {10,9,12,10,9};
 int tab2[5] = {10,10,9,9,12};
 
-void wypisz_czy_tablice_podobne(){
+bool wypisz_czy_tablice_podobne(int k){
     for (int i = 0; i < k; i++){
-        if(tab1[i] != tab2[i+n-k]){
-            cout<<"FALSZ";
-            return;
+        if(tab1[i] != tab2[i+n-k-1]){
+            return false;
         }
     }
     for (int i = 0; i < n-k; i++){
         if(tab1[k+i] != tab2[i]){
-            cout<<"FALSZ";
-            return;
+            return false;
         }
     }
-    cout<<"PRAWDA";
+    return true;
 }
 
 int main()
 {
-    wypisz_czy_tablice_podobne();
+    cout<<wypisz_czy_tablice_podobne(3);
+    //zad2
+    for(int i = 0; i < n; i++){
+        if(wypisz_czy_tablice_podobne(i)){
+            cout<<i;
+        }else{
+            cout<<"N";
+        }
+    }
     return 0;
 }
