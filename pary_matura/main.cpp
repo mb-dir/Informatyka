@@ -50,34 +50,36 @@ void hipotezaG(int a){
 //zad2
 
 void zad2(string s){
-    string ciag="";
-    string ciagOk="";
-    int maxC = 1;
-    int maxTest = 1; //fgsggggggg
+    s+="1";
+    string ciag = "";
+    string ciagT = "";
 
-    for(int i = 1; i < s.length()-1; i++){
-        if(s[i-1] == s[i]){
-            ciag += s[i-1];
-            maxTest++;
+
+    int dlT = 1;
+    int dlMax = 1;
+
+    for(int i = 0; i < s.length()-1; i++){
+        if(s[i] == s[i+1]){
+            ciagT+=s[i];
+            dlT++;
         }else{
-            if(maxTest > maxC){
-                maxC = maxTest;
-                maxTest = 1;
-                ciagOk = ciag;
-                ciag = "";
-                ciagOk+=ciagOk[0];
+            if(dlT>dlMax){
+               ciag = ciagT;
+               dlMax = dlT;
             }
+            dlT = 1;
+            ciagT="";
         }
     }
 
-
-    if(maxC == 1){
-        ciagOk=s[0];
+    if(dlMax == 1){
+        ciag = s[0];
+    }else{
+        ciag+=ciag[0];
     }
-    cout<<ciagOk<<" "<<maxC<<endl;
+
+    cout<<ciag<<" "<<dlMax<<endl;
 }
-
-
 int main()
 {
     fstream pary;
@@ -100,9 +102,9 @@ int main()
 
     //zad2
     for(int i = 0; i <100; i++){
-        //zad2(wyrazy[i]);
+        zad2(wyrazy[i]);
     }
-    zad2("fgsggggggg");
+    //zad2("fgsggggggg");
 
     return 0;
 }
