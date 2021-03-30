@@ -78,7 +78,11 @@ void zad2(string s){
         ciag+=ciag[0];
     }
 
-    cout<<ciag<<" "<<dlMax<<endl;
+    fstream wyniki2;
+    wyniki2.open("./wyniki4.2.txt", ios::out | ios::app);
+    wyniki2<<ciag<<" "<<dlMax<<endl;
+    wyniki2.close();
+    //cout<<ciag<<" "<<dlMax<<endl;
 }
 int main()
 {
@@ -104,7 +108,6 @@ int main()
     for(int i = 0; i <100; i++){
         zad2(wyrazy[i]);
     }
-    //zad2("fgsggggggg");
 
     return 0;
 }
