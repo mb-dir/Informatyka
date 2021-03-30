@@ -53,9 +53,9 @@ void zad2(string s){
     string ciag="";
     string ciagOk="";
     int maxC = 1;
-    int maxTest = 1;
+    int maxTest = 1; //fgsggggggg
 
-    for(int i = 1; i < s.length(); i++){
+    for(int i = 1; i < s.length()-1; i++){
         if(s[i-1] == s[i]){
             ciag += s[i-1];
             maxTest++;
@@ -70,6 +70,10 @@ void zad2(string s){
         }
     }
 
+
+    if(maxC == 1){
+        ciagOk=s[0];
+    }
     cout<<ciagOk<<" "<<maxC<<endl;
 }
 
@@ -96,8 +100,9 @@ int main()
 
     //zad2
     for(int i = 0; i <100; i++){
-        zad2(wyrazy[i]);
+        //zad2(wyrazy[i]);
     }
+    zad2("fgsggggggg");
 
     return 0;
 }
