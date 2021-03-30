@@ -5,6 +5,7 @@ using namespace std;
 string s;
 
 void ciag(string s){
+    s+="1";
     string ciag = "";
     string ciagT = "";
 
@@ -27,10 +28,8 @@ void ciag(string s){
 
     if(dlMax == 1){
         ciag = s[0];
-        cout<<"dlmax";
     }else{
         ciag+=ciag[0];
-        cout<<"ndndn";
     }
 
     cout<<ciag;
