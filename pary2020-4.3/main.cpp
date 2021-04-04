@@ -55,5 +55,10 @@ int main()
     for(int i = 0; i < 6; i++){
         cout<<tab_pomo[i]<<endl;
     }
+
+    fstream wynik;
+    wynik.open("./wynik.txt", ios::out);
+    wynik<<3<<" "<<tab_pomo[0];
+    wynik.close();
     return 0;
 }
