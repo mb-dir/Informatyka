@@ -10,11 +10,11 @@ int i = 0;
 
 string linia;
 
-void dlugosc(int a, string w){
+bool dlugosc(int a, string w){
     if(a == w.length()){
-        cout<<"OK";
+        return true;
     }else{
-        cout<<"NIE";
+        return false;
     }
 }
 
@@ -31,6 +31,13 @@ int main()
     }
     pary.close();
 
-    dlugosc(3,"jdds");
+    fstream plik_pomo;
+    plik_pomo.open("./pomo.txt", ios::out);
+    for(int i = 0; i < 100; i++){
+        if(dlugosc(l[i], s[i])){
+            plik_pomo<<l[i]<<" "<<s[i]<<endl;
+        }
+    }
+    plik_pomo.close();
     return 0;
 }
