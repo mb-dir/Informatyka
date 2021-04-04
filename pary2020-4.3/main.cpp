@@ -10,6 +10,14 @@ int i = 0;
 
 string linia;
 
+void dlugosc(int a, string w){
+    if(a == w.length()){
+        cout<<"OK";
+    }else{
+        cout<<"NIE";
+    }
+}
+
 int main()
 {
     fstream pary;
@@ -23,8 +31,6 @@ int main()
     }
     pary.close();
 
-    for(int i = 0; i < 100; i++){
-        cout<<l[i]<<" "<<s[i]<<endl;
-    }
+    dlugosc(3,"jdds");
     return 0;
 }
