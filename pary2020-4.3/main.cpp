@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -31,13 +32,28 @@ int main()
     }
     pary.close();
 
+    string tab_pomo[6];
+    int j=0;
     fstream plik_pomo;
     plik_pomo.open("./pomo.txt", ios::out);
     for(int i = 0; i < 100; i++){
-        if(dlugosc(l[i], s[i])){
+            //pewnosc ze w pomocniczym pliku jest to co nas interesuje(spelnia wymogi zadania)
+        if(dlugosc(l[i], s[i])&&l[i]==3){
             plik_pomo<<l[i]<<" "<<s[i]<<endl;
+            tab_pomo[j]=s[i];
+            j++;
         }
     }
     plik_pomo.close();
+
+    for(int i = 0; i < 6; i++){
+        cout<<tab_pomo[i]<<endl;
+    }
+    cout<<"---------------------------"<<endl;
+    //posortowane
+    sort(tab_pomo, tab_pomo+6);
+    for(int i = 0; i < 6; i++){
+        cout<<tab_pomo[i]<<endl;
+    }
     return 0;
 }
