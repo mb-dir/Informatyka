@@ -40,8 +40,10 @@ int main()
     for(int i = 0; i<500; i++){
         if(czy_pot_3(tab[i])){
             ile_spelnia_warunek++;
+            cout<<tab[i]<<endl;
         }
     }
+    cout<<"--------"<<endl;
     cout<<ile_spelnia_warunek;
     return 0;
 }
