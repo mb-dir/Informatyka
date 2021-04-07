@@ -35,9 +35,13 @@ int main()
         tab[i] = std::stoi(tab_liczby_string[i]);
     }
 
-    cout<<czy_pot_3(1);
-    cout<<czy_pot_3(2);
-    cout<<czy_pot_3(9);
-    cout<<czy_pot_3(2187);
+
+    int ile_spelnia_warunek = 0;
+    for(int i = 0; i<500; i++){
+        if(czy_pot_3(tab[i])){
+            ile_spelnia_warunek++;
+        }
+    }
+    cout<<ile_spelnia_warunek;
     return 0;
 }
