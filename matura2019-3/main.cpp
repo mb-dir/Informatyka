@@ -3,6 +3,9 @@
 
 using namespace std;
 string linia;
+string liczby_temp[500];
+
+int liczby_tab[500];
 
 int nwd(int a, int b){
     while(a!=b){
@@ -19,12 +22,16 @@ int main()
 {
     fstream liczby;
     liczby.open("./liczby.txt", ios::in);
+    int i = 0;
     while(!liczby.eof()){
         getline(liczby, linia);
-        //cout<<linia<<endl;
+        liczby_temp[i] = linia;
+        i++;
     }
     liczby.close();
 
-    cout<<nwd(16,24);
+    for(int  i = 0; i < 500; i++){
+        liczby_tab[i] = std::stoi(liczby_temp[i]);
+    }
     return 0;
 }
