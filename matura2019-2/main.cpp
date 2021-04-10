@@ -13,22 +13,24 @@ int silnia(int a){
 void zadanie(int a){
     int suma = 0;
     int b;
+    int temp = a;
     while(a){
         b=a%10;
-        cout<<b<<endl;
+        suma+=silnia(b);
         a/=10;
+    }
+    if(suma == temp){
+        cout<<suma<<endl;
     }
 }
 
 int main()
 {
-
-    zadanie(12345);
     fstream liczby;
     liczby.open("./liczby.txt", ios::in);
-
     while(!liczby.eof()){
         getline(liczby, linia);
+        zadanie(std::stoi(linia));
     }
 
     liczby.close();
