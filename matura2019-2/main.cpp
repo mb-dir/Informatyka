@@ -19,9 +19,13 @@ void zadanie(int a){
         suma+=silnia(b);
         a/=10;
     }
+    fstream wynik;
+    wynik.open("./wynik.txt", ios::out | ios::app);
     if(suma == temp){
         cout<<suma<<endl;
+        wynik<<suma<<endl;
     }
+    wynik.close();
 }
 
 int main()
