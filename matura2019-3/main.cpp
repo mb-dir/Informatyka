@@ -33,5 +33,22 @@ int main()
     for(int  i = 0; i < 500; i++){
         liczby_tab[i] = std::stoi(liczby_temp[i]);
     }
+
+    int dl = 0;
+    int dlMax=0;
+    int pierwsza;
+    int maxL;
+
+    for(int  i = 1; i < 500; i++){
+        if(nwd(liczby_tab[i-1], liczby_tab[i])!=1){
+            dl++;
+        }else{
+            if(dl>dlMax){
+                dlMax = dl;
+            }
+            dl=0;
+        }
+    }
+    cout<<dlMax;
     return 0;
 }
