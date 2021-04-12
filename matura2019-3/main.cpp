@@ -52,5 +52,14 @@ int main()
         }
     }
     cout<<liczby_tab[koniec-150];
+
+    int tab_max[150];
+    for(int i = koniec-150, j = 0; i < koniec; i++, j++){
+        tab_max[j] = liczby_tab[i];
+    }
+
+    for(int i = 0; i < 150; i++){
+        cout<<tab_max[i]<<endl;
+    }
     return 0;
 }
