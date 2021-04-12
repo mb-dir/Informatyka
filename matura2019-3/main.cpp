@@ -39,9 +39,10 @@ int main()
     int pierwsza;
     int maxL;
 
-    for(int  i = 1; i < 500; i++){
-        if(nwd(liczby_tab[i-1], liczby_tab[i])!=1){
-            dl++;
+
+    for(int  i = 0; i < 499; i+=2){
+        if(nwd(nwd(liczby_tab[i], liczby_tab[i+1]), liczby_tab[i+1])!=1){
+            dl+=2;
         }else{
             if(dl>dlMax){
                 dlMax = dl;
