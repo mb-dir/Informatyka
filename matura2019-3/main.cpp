@@ -36,7 +36,7 @@ int main()
 
     int dl = 0;
     int dlMax=0;
-    int pierwsza;
+    int koniec;
     int maxL;
 
 
@@ -45,11 +45,12 @@ int main()
             dl+=2;
         }else{
             if(dl>dlMax){
+                koniec = i;
                 dlMax = dl;
             }
             dl=0;
         }
     }
-    cout<<dlMax;
+    cout<<liczby_tab[koniec-150];
     return 0;
 }
