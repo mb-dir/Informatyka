@@ -5,10 +5,12 @@
 
 using namespace std;
 
-
+//dane poczatkowe - chcac cos zmienic, trzeba nadac inne wartosci n oraz tab[x] gdzie x = n
 int n = 21;
-int index_srodek_tab = n/2;
 int tab[21];
+//srodek tablicy
+int index_srodek_tab = n/2;
+//liczbik dlugosci ciagu kandydata na lidera
 int j = 0;
 
 int main()
@@ -30,6 +32,8 @@ int main()
 
     //Posortowanie tablicy
     sort(tab, tab+n);
+
+    //zliczanie ilosci wystapien kandydata na lidera
     for(int i = 0; i < n; i++){
         if(tab[i] == tab[index_srodek_tab]){
             j++;
