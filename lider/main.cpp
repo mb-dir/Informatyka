@@ -6,9 +6,9 @@
 using namespace std;
 
 
-int n = 20;
+int n = 21;
 int index_srodek_tab = n/2;
-int tab[20];
+int tab[21];
 int j = 0;
 
 int main()
@@ -16,10 +16,15 @@ int main()
     //Wype³nienie tablicy
     srand(time(NULL));
     for(int i = 0; i < n; i++){
-        if(i%2 == 0){
-            tab[i] = 7;
+        if(i%3 == 0){
+            tab[i] = 17;
         }else{
-            tab[i] = rand()%19+1;
+            int liczba = rand()%49+1;
+            if(liczba % 4 == 0){
+                tab[i] = 17;
+            }else{
+                tab[i] = liczba;
+            }
         }
     }
 
