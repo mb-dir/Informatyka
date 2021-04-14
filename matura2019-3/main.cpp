@@ -79,7 +79,7 @@ int main()
 
     //wszystkie dzielniki tej liczby i potem sprawdzanie na pale
     //cout<<tab_max[0];
-    int odp2 = tab_max[0];
+    int pierwsza_w_ciagu = tab_max[0];
 
     sort(tab_max, tab_max+150);
 
@@ -94,5 +94,13 @@ int main()
             }
         }
     }
+
+    fstream wynik;
+
+    wynik.open("./wynik.txt", ios::out);
+    wynik<<pierwsza_w_ciagu<<" "<<dlMax<<" "<<tab_dzielniki[0]<<endl;
+
+
+    wynik.close();
     return 0;
 }
