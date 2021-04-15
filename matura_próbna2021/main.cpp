@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -45,8 +46,27 @@ int main()
     }
     dane.close();
 
+
+    //zad 1
+
+    string skrot_kopia[50];
+
     for(int i = 0; i < 50; i++){
-        cout<<galerie[i].wymiary[1]<<endl;
+        skrot_kopia[i] = galerie[i].skrot;
     }
+
+    sort(skrot_kopia, skrot_kopia+50);
+
+
+    int ilosc_wystapien = 1;
+    for(int i = 0; i < 49; i++){
+
+        if(skrot_kopia[i] == skrot_kopia[i+1]){
+
+        }
+
+        cout<<skrot_kopia[i]<<endl;
+    }
+
     return 0;
 }
