@@ -79,16 +79,22 @@ int main()
     sort(skrot_kopia, skrot_kopia+50);
 
 
-   for(int i = 0; i < 50; i++){
+    for(int i = 0; i < 50; i++){
         cout<<skrot_kopia[i]<<endl;
-   }
+    }
 
     cout<<endl;
-   int temp = 0;
-   for(int i = 0; i < 20; i++){
-        cout<<skrot_kopia[temp]<<": "<<ostatnie_wystapienie(skrot_kopia[temp], skrot_kopia, temp) - pierwsze_wystapienie(skrot_kopia[temp], skrot_kopia, temp)<<endl;
+    int temp = 0;
+
+    fstream wynik1;
+    wynik1.open("wynik1.txt", ios::out);
+
+    for(int i = 0; i < 20; i++){
+        wynik1<<skrot_kopia[temp]<<": "<<ostatnie_wystapienie(skrot_kopia[temp], skrot_kopia, temp) - pierwsze_wystapienie(skrot_kopia[temp], skrot_kopia, temp)<<endl;
         temp = ostatnie_wystapienie(skrot_kopia[temp], skrot_kopia, temp);
-   }
+    }
+
+    wynik1.close();
 
     return 0;
 }
