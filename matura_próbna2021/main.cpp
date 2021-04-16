@@ -31,7 +31,7 @@ int pierwsze_wystapienie(string a, string* tab, int poczatek = 0){
 
 int ostatnie_wystapienie(string a, string* tab, int poczatek = 0){
     //wiemy, ze do 50
-    for(int i = poczatek; i < 50; i++){
+    for(int i = poczatek; i <= 50; i++){
        if(a != tab[i]){
             return i;
        }
@@ -80,12 +80,15 @@ int main()
 
 
    for(int i = 0; i < 50; i++){
-        //cout<<skrot_kopia[i]<<endl;
+        cout<<skrot_kopia[i]<<endl;
    }
-   string test[10] = {"A","A","A","B","C","C","C","C","G","G"};
 
-   cout<<pierwsze_wystapienie("C", test)<<endl;
-   cout<<ostatnie_wystapienie("C", test, 4)<<endl;
+    cout<<endl;
+   int temp = 0;
+   for(int i = 0; i < 20; i++){
+        cout<<skrot_kopia[temp]<<": "<<ostatnie_wystapienie(skrot_kopia[temp], skrot_kopia, temp) - pierwsze_wystapienie(skrot_kopia[temp], skrot_kopia, temp)<<endl;
+        temp = ostatnie_wystapienie(skrot_kopia[temp], skrot_kopia, temp);
+   }
 
     return 0;
 }
