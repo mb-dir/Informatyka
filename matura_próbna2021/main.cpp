@@ -17,6 +17,27 @@ int tab_wymiary[140];
 
 galeria galerie[50];
 
+
+
+//funkcje do zad nr 1
+int pierwsze_wystapienie(string a, string* tab, int poczatek = 0){
+    //wiemy, ze do 50
+    for(int i = poczatek; i < 50; i++){
+       if(a == tab[i]){
+            return i;
+       }
+    }
+}
+
+int ostatnie_wystapienie(string a, string* tab, int poczatek = 0){
+    //wiemy, ze do 50
+    for(int i = poczatek; i < 50; i++){
+       if(a != tab[i]){
+            return i;
+       }
+    }
+}
+
 int main()
 {
     fstream dane;
@@ -58,15 +79,13 @@ int main()
     sort(skrot_kopia, skrot_kopia+50);
 
 
-    int ilosc_wystapien = 1;
-    for(int i = 0; i < 49; i++){
+   for(int i = 0; i < 50; i++){
+        //cout<<skrot_kopia[i]<<endl;
+   }
+   string test[10] = {"A","A","A","B","C","C","C","C","G","G"};
 
-        if(skrot_kopia[i] == skrot_kopia[i+1]){
-
-        }
-
-        cout<<skrot_kopia[i]<<endl;
-    }
+   cout<<pierwsze_wystapienie("C", test)<<endl;
+   cout<<ostatnie_wystapienie("C", test, 4)<<endl;
 
     return 0;
 }
