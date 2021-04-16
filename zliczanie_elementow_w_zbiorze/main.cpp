@@ -21,23 +21,39 @@ int ostatnie_wystapienie(string a, string* tab, int dl){
     }
 }
 
+int ileWystapien(string* dane, int dl, string a) {
+    int licznik = 0;
+    for (int i = 0; i < dl; i++) {
+        if (dane[i] == a) {
+            licznik++;
+        }
+    }
+    return licznik;
+}
+
 int main()
 {
-    cout << "Przed sortowaniem" << endl;
-    for(int i = 0; i < 10; i ++){
-        cout<<tab[i]<<" ";
+    int temp = 0;
+    for(int i = 0; i < 10; i++){
+         cout<<tab[i]<<": "<<ileWystapien(tab, 10, tab[i])<<endl;
+         temp = ileWystapien(tab, 10, tab[i]);
     }
-    sort(tab, tab+10);
-    cout<<endl;
-    cout<<"Po sortowaniu"<<endl;
+
+    //cout << "Przed sortowaniem" << endl;
     for(int i = 0; i < 10; i ++){
-        cout<<tab[i]<<" ";
+        //cout<<tab[i]<<" ";
+    }
+    //sort(tab, tab+10);
+    cout<<endl;
+    //cout<<"Po sortowaniu"<<endl;
+    for(int i = 0; i < 10; i ++){
+        //cout<<tab[i]<<" ";
     }
     cout<<endl;
 
-    cout<<pierwsze_wystapienie("J", tab, 10)<<endl;
-    cout<<ostatnie_wystapienie("J", tab, 10)<<endl;
+    //cout<<pierwsze_wystapienie("J", tab, 10)<<endl;
+    //cout<<ostatnie_wystapienie("J", tab, 10)<<endl;
 
-    cout<<"Ilosc wystapien to: "<<ostatnie_wystapienie("J", tab, 10)+1 - pierwsze_wystapienie("J", tab, 10);
+    //cout<<"Ilosc wystapien to: "<<ostatnie_wystapienie("J", tab, 10)+1 - pierwsze_wystapienie("J", tab, 10);
     return 0;
 }
