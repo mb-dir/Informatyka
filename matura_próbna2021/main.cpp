@@ -41,12 +41,27 @@ int ostatnie_wystapienie(string a, string* tab, int poczatek = 0){
 //zad2
 int pole(int* tab){
     int l = 0;
+    int ile_galerii = 0;
 
     for(int i = 0; i < 140; i+=2){
         int a = tab[i]*tab[i+1];
         l+=a;
+
+        if(tab[i] != 0){
+            ile_galerii++;
+        }
     }
     return l;
+}
+int ile_galerii(int* tab){
+    int ile_galerii = 0;
+
+    for(int i = 0; i < 140; i+=2){
+        if(tab[i] != 0){
+            ile_galerii++;
+        }
+    }
+    return ile_galerii;
 }
 
 int main()
@@ -111,7 +126,7 @@ int main()
     //zad2
 
     for(int  i = 0; i < 50; i++){
-        cout<< galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<endl;
+        cout<< galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<" - "<<ile_galerii(galerie[i].wymiary)<<endl;
     }
 
     return 0;
