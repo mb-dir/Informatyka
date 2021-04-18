@@ -38,6 +38,11 @@ int ostatnie_wystapienie(string a, string* tab, int poczatek = 0){
     }
 }
 
+//zad2
+int pole(int a, int b){
+    return a*b;
+}
+
 int main()
 {
     fstream dane;
@@ -80,7 +85,7 @@ int main()
 
 
     for(int i = 0; i < 50; i++){
-        cout<<skrot_kopia[i]<<endl;
+        //cout<<skrot_kopia[i]<<endl;
     }
 
     cout<<endl;
@@ -95,6 +100,11 @@ int main()
     }
 
     wynik1.close();
+
+
+    //zad2
+
+    cout<<pole(2,3);
 
     return 0;
 }
