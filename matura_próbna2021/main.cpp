@@ -124,10 +124,26 @@ int main()
 
 
     //zad2
+    int max_galeria = 0;
+    string max_nazwa;
+
+    int min_galeria = 10000000;
+    string min_nazwa;
 
     for(int  i = 0; i < 50; i++){
-        cout<< galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<" - "<<ile_galerii(galerie[i].wymiary)<<endl;
-    }
 
+        if(pole(galerie[i].wymiary) > max_galeria){
+            max_galeria = pole(galerie[i].wymiary);
+            max_nazwa = galerie[i].miasto;
+        }
+        if(pole(galerie[i].wymiary) < min_galeria){
+            min_galeria = pole(galerie[i].wymiary);
+            min_nazwa = galerie[i].miasto;
+        }
+        cout<<galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<" - "<<ile_galerii(galerie[i].wymiary)<<endl;
+
+    }
+    cout<<"MAX: "<<max_nazwa<<": "<<max_galeria<<endl;
+    cout<<"MIN: "<<min_nazwa<<": "<<min_galeria<<endl;
     return 0;
 }
