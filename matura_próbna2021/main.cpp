@@ -130,6 +130,10 @@ int main()
     int min_galeria = 10000000;
     string min_nazwa;
 
+    fstream wyniki2;
+    wyniki2.open("wynik_2.txt", ios::out);
+
+
     for(int  i = 0; i < 50; i++){
 
         if(pole(galerie[i].wymiary) > max_galeria){
@@ -140,10 +144,13 @@ int main()
             min_galeria = pole(galerie[i].wymiary);
             min_nazwa = galerie[i].miasto;
         }
-        cout<<galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<" - "<<ile_galerii(galerie[i].wymiary)<<endl;
+        wyniki2<<galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<" - "<<ile_galerii(galerie[i].wymiary)<<endl;
 
     }
-    cout<<"MAX: "<<max_nazwa<<": "<<max_galeria<<endl;
-    cout<<"MIN: "<<min_nazwa<<": "<<min_galeria<<endl;
+    wyniki2<<"MAX: "<<max_nazwa<<": "<<max_galeria<<endl;
+    wyniki2<<"MIN: "<<min_nazwa<<": "<<min_galeria<<endl;
+
+    wyniki2.close();
+
     return 0;
 }
