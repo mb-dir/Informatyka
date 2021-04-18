@@ -34,8 +34,13 @@ int ileWystapien(string* dane, int dl, string a) {
 int main()
 {
     int temp = 0;
+
+    while(true){
+        cout<<tab[i]<<": "<<ileWystapien(tab, 10, tab[temp])<<endl;
+        temp = ileWystapien(tab, 10, tab[i]);
+    }
     for(int i = 0; i < 10; i++){
-         cout<<tab[i]<<": "<<ileWystapien(tab, 10, tab[i])<<endl;
+         cout<<tab[i]<<": "<<ileWystapien(tab, 10, tab[temp])<<endl;
          temp = ileWystapien(tab, 10, tab[i]);
     }
 
@@ -43,7 +48,7 @@ int main()
     for(int i = 0; i < 10; i ++){
         //cout<<tab[i]<<" ";
     }
-    //sort(tab, tab+10);
+    sort(tab, tab+10);
     cout<<endl;
     //cout<<"Po sortowaniu"<<endl;
     for(int i = 0; i < 10; i ++){
