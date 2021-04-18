@@ -39,8 +39,14 @@ int ostatnie_wystapienie(string a, string* tab, int poczatek = 0){
 }
 
 //zad2
-int pole(int a, int b){
-    return a*b;
+int pole(int* tab){
+    int l = 0;
+
+    for(int i = 0; i < 10; i+=2){
+        int a = tab[i]*tab[i+1];
+        l+=a;
+    }
+    return l;
 }
 
 int main()
@@ -103,8 +109,12 @@ int main()
 
 
     //zad2
+    int t[10] = {2,3,4,5,6,7,8,9,9,1};
+    cout<<pole(t);
 
-    cout<<pole(2,3);
+    for(int  i = 0; i < 50; i++){
+
+    }
 
     return 0;
 }
