@@ -42,7 +42,7 @@ int ostatnie_wystapienie(string a, string* tab, int poczatek = 0){
 int pole(int* tab){
     int l = 0;
 
-    for(int i = 0; i < 10; i+=2){
+    for(int i = 0; i < 140; i+=2){
         int a = tab[i]*tab[i+1];
         l+=a;
     }
@@ -109,11 +109,9 @@ int main()
 
 
     //zad2
-    int t[10] = {2,3,4,5,6,7,8,9,9,1};
-    cout<<pole(t);
 
     for(int  i = 0; i < 50; i++){
-
+        cout<< galerie[i].miasto<<": "<<pole(galerie[i].wymiary)<<endl;
     }
 
     return 0;
