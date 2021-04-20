@@ -9,6 +9,19 @@ string linia;
 string slowa[3000];
 int klucz[3000];
 
+void cezar(string slowo, int klucz){
+    int k = klucz%26;
+
+    for(int i = 0; i < slowo.length(); i++){
+        if(int(slowo[i]-k < 65)){
+            slowo[i] = slowo[i]-k+26;
+        }else{
+            slowo[i] = slowo[i]-k;
+        }
+    }
+    cout<<slowo;
+}
+
 int main()
 {
     fstream zad;
@@ -24,9 +37,6 @@ int main()
     }
     zad.close();
 
-    for(int i = 0; i < 3000; i++){
-        cout<<slowa[i]<<" "<<klucz[i]<<endl;
-    }
 
     return 0;
 }
