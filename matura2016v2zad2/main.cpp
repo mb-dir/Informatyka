@@ -6,10 +6,10 @@ using namespace std;
 
 string linia;
 
-string slowa[3000];
-int klucz[3000];
+string slowo;
+int klucz;
 
-void cezar(string slowo, int klucz){
+string cezar(string slowo, int klucz){
     int k = klucz%26;
 
     for(int i = 0; i < slowo.length(); i++){
@@ -19,23 +19,26 @@ void cezar(string slowo, int klucz){
             slowo[i] = slowo[i]-k;
         }
     }
-    cout<<slowo;
+    return slowo;
 }
 
 int main()
 {
     fstream zad;
+    fstream odp;
 
     zad.open("dane_6_2.txt", ios::in);
-    int i = 0;
+    odp.open("dane_6_2_wyniki.txt", ios::out);
     while(!zad.eof()){
         getline(zad, linia);
         stringstream sString(linia);
-        sString>>slowa[i];
-        sString>>klucz[i];
-        i++;
+        sString>>slowo;
+        sString>>klucz;
+
+        odp<<cezar(slowo, klucz)<<endl;
     }
     zad.close();
+    odp.close();
 
 
     return 0;
