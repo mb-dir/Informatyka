@@ -33,7 +33,9 @@ bool czy_cezar_ok(string w1, string w2){
 int main()
 {
     fstream zad;
+    fstream zad_odp;
     zad.open("dane_6_3.txt", ios::in);
+    zad_odp.open("dane_6_3_wynik.txt", ios::out);
 
     while(!zad.eof()){
         getline(zad, linia);
@@ -42,10 +44,11 @@ int main()
         sString>>w2;
 
         if(czy_cezar_ok(w1,w2) == false){
-            cout<<w1<<" "<<w2<<" zly"<<endl;
+            zad_odp<<w1<<endl;
         }
 
     }
     zad.close();
+    zad_odp.close();
     return 0;
 }
