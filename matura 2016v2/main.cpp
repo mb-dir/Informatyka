@@ -5,7 +5,7 @@ using namespace std;
 
 string linia_zad1;
 
-void cezar(string a){
+string cezar(string a){
     int k = 107%26;
     for(int i = 0; i < a.length(); i++){
         if(int(a[i]) > 87){
@@ -14,21 +14,24 @@ void cezar(string a){
             a[i] = a[i]+3;
         }
     }
-    cout<<a;
+    return a;
 }
 
 int main()
 {
     fstream zad;
+    fstream zad_wyniki;
     zad.open("./dane_6_1.txt", ios::in);
+    zad_wyniki.open("./dane_6_1_wynik.txt", ios::out);
 
     while(!zad.eof()){
         getline(zad, linia_zad1);
-        //cout<<linia_zad1<<endl;
+        zad_wyniki<<cezar(linia_zad1)<<endl;
     }
 
     zad.close();
+    zad_wyniki.close();
 
-    cezar("INTERPRETOWANIEXYZ");
+    cout<<cezar("INTERPRETOWANIEXYZ");
     return 0;
 }
