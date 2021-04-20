@@ -9,30 +9,25 @@ string linia;
 
 string w1,w2;
 
-char jeden_cezar(char w, int k){
-    if(int(w + k) > 90){
-        return int(w + k + 26);
-    }else{
-        return int(w + k);
+string cezar(string a, int klucz){
+    int k = klucz%26;
+    for(int i = 0; i < a.length(); i++){
+        if(int(a[i] + k) > 90){
+            a[i] = a[i]+k-26;
+        }else{
+            a[i] = a[i]+k;
+        }
     }
-}
-char jeden_cezar_opcja_2(char w, int k){
-    if(int(w - k) <60){
-        return int(w - k + 26);
-    }else{
-        return int(w - k);
-    }
+    return a;
 }
 
-bool czy_cezar_zly(string w1, string w2){
-    int k = abs(w1[0]-w2[0]);
-
-    for(int i = 0; i < w1.length(); i++){
-        if(jeden_cezar(w1[i], k) != w2[i] && jeden_cezar_opcja_2(w1[i], k)!= w2[i]){
+bool czy_cezar_ok(string w1, string w2){
+    for(int i = 0; i <=26; i++){
+        if(cezar(w1, i) == w2){
             return true;
         }
     }
-
+    return false;
 }
 
 int main()
@@ -46,12 +41,11 @@ int main()
         sString>>w1;
         sString>>w2;
 
-        //if(czy_cezar_zly(w1,w2)){
-            //cout<<w1<<" "<<w2<<" zly"<<endl;
-        //}
+        if(czy_cezar_ok(w1,w2) == false){
+            cout<<w1<<" "<<w2<<" zly"<<endl;
+        }
 
     }
-    cout<<czy_cezar_zly("ZAWISLAK", "EFBNXQFP");
     zad.close();
     return 0;
 }
