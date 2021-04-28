@@ -4,6 +4,7 @@
 using namespace std;
 
 string linia;
+int tab[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
 
 int main()
 {
@@ -11,8 +12,12 @@ int main()
     slowa.open("./slowa.txt", ios::in);
     while(!slowa.eof()){
         getline(slowa, linia);
-        cout<<linia<<endl;
+        tab[linia.length()-1]++;
     }
     slowa.close();
+
+    for(int i = 0; i < 12; i++){
+        cout<<i+1<<": "<<tab[i]<<endl;
+    }
     return 0;
 }
