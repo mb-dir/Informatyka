@@ -2,14 +2,15 @@
 
 using namespace std;
 
-string s;
+string s, s2;
 
 int main()
 {
     cin>>s;
-
-    for(int i = s.length()-1; i >=0; i--){
-        cout<<s[i];
+    s2=s;
+    for(int i = s.length()-1, j=0; i >=0; i--, j++){
+        s2[j]=s[i];
     }
+    cout<<s2;
     return 0;
 }
