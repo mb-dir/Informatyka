@@ -10,8 +10,23 @@ int silnia(int a){
     }
 }
 
+int tab[5] = {5,2,1,17,12};
+
 int main()
 {
-    cout << silnia(5) << endl;
+    for(int i = 0; i < 5; i ++){
+        for(int j = 0; j < 5; j++){
+            if(tab[j] < tab[i]){
+                int x = tab[j];
+                tab[j] = tab[i];
+                tab[i] = x;
+            }
+        }
+    }
+
+    for(int i = 0; i < 5; i++){
+        cout<<tab[i]<<endl;
+    }
+
     return 0;
 }
