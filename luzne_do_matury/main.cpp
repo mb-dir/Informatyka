@@ -3,15 +3,15 @@
 using namespace std;
 
 int silnia(int a){
-    int b = 1;
-    for(int i = 1; i <=a; i++){
-        b*=i;
+    if(a < 2){
+        return 1;
+    }else{
+        return silnia(a-1)*a;
     }
-    return b;
 }
 
 int main()
 {
-    cout << silnia(3) << endl;
+    cout << silnia(5) << endl;
     return 0;
 }
