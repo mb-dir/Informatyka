@@ -15,11 +15,11 @@ int tab[5] = {5,2,1,17,12};
 int main()
 {
     for(int i = 0; i < 5; i ++){
-        for(int j = 0; j < 5; j++){
-            if(tab[j] < tab[i]){
+        for(int j = 0; j < 4; j++){
+            if(tab[j] > tab[j+1]){
                 int x = tab[j];
-                tab[j] = tab[i];
-                tab[i] = x;
+                tab[j] = tab[j+1];
+                tab[j+1] = x;
             }
         }
     }
