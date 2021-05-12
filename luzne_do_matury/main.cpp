@@ -10,12 +10,23 @@ int silnia(int a){
     }
 }
 
-int potegowanie(int podstawa, int wykladnik){
-    int a = 1;
-    for(int i = 0; i < wykladnik; i++){
-        a*=podstawa;
+void czy_parzysta(int a){
+    if(a == 2 || a == 3){
+        cout<<"TAK"<<endl;
+        return;
+    }else if(a == 1){
+        cout<<"NIE"<<endl;
+        return;
+    }else{
+        for(int i = 2; i*i <= a; i++){
+            if(a%i == 0){
+                cout<<"NIE"<<endl;
+                return;
+            }
+        }
+        cout<<"TAK"<<endl;
+        return;
     }
-    return a;
 }
 int tab[5] = {5,2,1,17,17};
 
@@ -34,7 +45,16 @@ int main()
     for(int i = 0; i < 5; i++){
         cout<<tab[i]<<endl;
     }
-    cout<<potegowanie(2, 0);
+    czy_parzysta(1);
+    czy_parzysta(2);
+    czy_parzysta(3);
+    czy_parzysta(4);
+    czy_parzysta(5);
+    czy_parzysta(6);
+    czy_parzysta(7);
+    czy_parzysta(8);
+    czy_parzysta(9);
+    czy_parzysta(11);
 
     return 0;
 }
