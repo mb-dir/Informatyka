@@ -11,11 +11,11 @@ int silnia(int a){
 }
 
 int potegowanie(int podstawa, int wykladnik){
-    if(wykladnik == 0){
-        return 1;
-    }else{
-        return potegowanie(podstawa, wykladnik-1)*podstawa;
+    int a = 1;
+    for(int i = 0; i < wykladnik; i++){
+        a*=podstawa;
     }
+    return a;
 }
 int tab[5] = {5,2,1,17,17};
 
@@ -34,7 +34,7 @@ int main()
     for(int i = 0; i < 5; i++){
         cout<<tab[i]<<endl;
     }
-    cout<<potegowanie(2, 10);
+    cout<<potegowanie(2, 0);
 
     return 0;
 }
