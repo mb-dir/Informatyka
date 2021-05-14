@@ -32,9 +32,6 @@ void to_dec(int a, int system){
         tab_potegi[i] = potega(system, dl_temp-1);
         dl_temp--;
     }
-    for(int i = 0; i < dl; i++){
-        cout<<tab_potegi[i]<<endl;
-    }
 
 
 
@@ -50,13 +47,19 @@ void to_dec(int a, int system){
         dl_temp2--;
         a_temp/=10;
     }
+
+
+    int liczba_dec = 0;
     for(int i = 0; i < dl; i++){
-        cout<<tab_cyfry[i]<<endl;
+        int x = tab_cyfry[i]* tab_potegi[i];
+
+        liczba_dec+=x;
     }
+    cout<<liczba_dec;
 }
 
 int main()
 {
-    to_dec(2021, 3);
+    to_dec(2021, 4);
     return 0;
 }
