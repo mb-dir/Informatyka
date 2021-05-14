@@ -3,33 +3,21 @@
 #include <sstream>
 
 using namespace std;
-string linia;
+int a = 0;
 
-string x,y;
+int dl_liczby(int x){
+    int s = 0;
 
-int suma(int a, int b){
-    return a+b;
+    while(x){
+        x/=10;
+        s++;
+    }
+    return s;
 }
 
 int main()
 {
-    fstream liczby;
-    fstream odp;
-
-    liczby.open("./test.txt", ios::in);
-    odp.open("./odp.txt", ios::out);
-
-    while(!liczby.eof()){
-        getline(liczby, linia);
-        stringstream sString(linia);
-        sString>>x;
-        sString>>y;
-
-        odp<<suma(std::stoi(x), std::stoi(y))<<endl;
-    }
-
-    liczby.close();
-    odp.close();
+    cout<<dl_liczby(111121);
 
     return 0;
 }
