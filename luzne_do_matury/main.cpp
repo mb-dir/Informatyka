@@ -14,8 +14,10 @@ int suma(int a, int b){
 int main()
 {
     fstream liczby;
+    fstream odp;
 
     liczby.open("./test.txt", ios::in);
+    odp.open("./odp.txt", ios::out);
 
     while(!liczby.eof()){
         getline(liczby, linia);
@@ -23,10 +25,11 @@ int main()
         sString>>x;
         sString>>y;
 
-        cout<<suma(std::stoi(x), std::stoi(y))<<endl;
+        odp<<suma(std::stoi(x), std::stoi(y))<<endl;
     }
 
     liczby.close();
+    odp.close();
 
     return 0;
 }
