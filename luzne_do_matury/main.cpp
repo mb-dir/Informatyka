@@ -3,7 +3,6 @@
 #include <sstream>
 
 using namespace std;
-int a = 0;
 
 int dl_liczby(int x){
     int s = 0;
@@ -33,9 +32,6 @@ void to_dec(int a, int system){
         dl_temp--;
     }
 
-
-
-
     //rozbijane liczby na cyfry
 
     int tab_cyfry[dl];
@@ -58,8 +54,41 @@ void to_dec(int a, int system){
     cout<<liczba_dec;
 }
 
+
+void from_dec(int liczba, int system){
+
+    int dl;
+
+    for(int i = 0; i <100; i++){
+        if(liczba < potega(system, i)){
+            dl=i;
+            break;
+        }
+    }
+
+    int potegi[dl];
+    int nowa_liczba[dl];
+
+    for(int i = 0; i < dl; i++){
+        potegi[i] = potega(system, i);
+    }
+
+    for(int i = dl-1; i >-1; i--){
+        int x;
+        x = liczba/potegi[i];
+        nowa_liczba[i] = x;
+        liczba-=potegi[i]*x;
+    }
+
+
+    for(int i = dl-1; i >-1; i--){
+        cout<<nowa_liczba[i];
+    }
+
+}
+
 int main()
 {
-    to_dec(2021, 4);
+    from_dec(137, 4);
     return 0;
 }
