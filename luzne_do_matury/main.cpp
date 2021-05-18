@@ -5,30 +5,25 @@
 using namespace std;
 
 void from_dec(int liczba, int system){
-    string s;
-    while(liczba){
-        int x = liczba%system;
-        if(x < 10){
-            s = char('0' + x)+s;
+    string nowa_liczba;
+
+    while(liczba > 0){
+        int cyfra = liczba%system;
+
+        if(cyfra < 10){
+            nowa_liczba=char('0'+cyfra) + nowa_liczba;
         }else{
-            s = char('A'-10 + x)+s;
+            nowa_liczba=char('A'-10+cyfra) + nowa_liczba;
         }
+
         liczba/=system;
     }
-    cout<<s;
+    cout<<nowa_liczba;
 }
 
 
-void to_dec(int liczba, int system){
-    string s;
-    while(liczba){
-        s=char(48+liczba%system)+s;
-        liczba/=system;
-    }
-    cout<<s;
-}
 int main()
 {
-    to_dec(10, 2);
+    from_dec(118, 11);
     return 0;
 }
