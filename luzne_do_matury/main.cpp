@@ -20,10 +20,19 @@ void from_dec(int liczba, int system){
     }
     cout<<nowa_liczba;
 }
+int tab[7] = {100, 50, 20, 10, 5, 2, 1};
 
+void zachlanne(int liczby[], int kwota){
+    for(int i = 0; i < 7; i++){
+        int x = kwota/liczby[i];
+        cout<<x<<" - "<<tab[i]<<endl;
+
+        kwota = kwota - (tab[i]*x);
+    }
+}
 
 int main()
 {
-    from_dec(118, 11);
+    zachlanne(tab, 134);
     return 0;
 }
