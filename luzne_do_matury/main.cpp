@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <sstream>
+#include <cstring>
 
 using namespace std;
 
@@ -31,8 +33,27 @@ void zachlanne(int liczby[], int kwota){
     }
 }
 
+void to_dec(string liczba, int system){
+    int p = 1;
+    int x;
+    int wynik = 0;
+
+    for(int i = liczba.length()-1; i >=0; i--){
+        if( (int)liczba[i] > 48 && (int)liczba[i] < 58){
+            x = int(liczba[i]);
+        }else{
+            x = int(liczba[i]-55);
+        }
+        wynik+=x*p;
+        p*=system;
+    }
+
+    cout<<wynik;
+}
+
 int main()
 {
-    zachlanne(tab, 134);
+    to_dec("AB", 16);
+
     return 0;
 }
