@@ -53,16 +53,13 @@ void to_dec(string liczba, int system){
 
 int main()
 {
-    int a = 1314;
-    int w = 0;
-    while(a){
-        int y = a%10;
-        cout<<y;
-        w+=y;
-        a/=10;
+    int a=9,b;
+    cin>>b;
+
+    for(int i = 0; i < b*10; i=i+10){
+        a+=i*9;
     }
-    cout<<endl;
-    cout<<w;
+    cout<<a;
 
     return 0;
 }
