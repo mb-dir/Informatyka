@@ -6,6 +6,8 @@
 
 using namespace std;
 
+int b;
+
 
 int potega(int podstawa, int wykladnik){
     if(wykladnik == 0){
@@ -25,15 +27,20 @@ int matura(int ile){
 }
 
 
+int dl(int a){
+    int c = 0;
+    while(a){
+        c++;
+        a/=10;
+    }
+    return c;
+}
+
 int main()
 {
+    cin>>b;
 
-    cout<<test(1)<<endl;
-    cout<<test(2)<<endl;
-    cout<<test(3)<<endl;
-    cout<<test(4)<<endl;
-    cout<<test(5)<<endl;
-    cout<<test(6)<<endl;
-    cout<<test(7)<<endl;
+    cout<<matura(dl(b))-b;
+
     return 0;
 }
