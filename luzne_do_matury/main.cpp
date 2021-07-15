@@ -6,60 +6,41 @@
 
 using namespace std;
 
-void from_dec(int liczba, int system){
-    string nowa_liczba;
+int b;
 
-    while(liczba > 0){
-        int cyfra = liczba%system;
 
-        if(cyfra < 10){
-            nowa_liczba=char('0'+cyfra) + nowa_liczba;
-        }else{
-            nowa_liczba=char('A'-10+cyfra) + nowa_liczba;
-        }
-
-        liczba/=system;
-    }
-    cout<<nowa_liczba;
-}
-int tab[7] = {100, 50, 20, 10, 5, 2, 1};
-
-void zachlanne(int liczby[], int kwota){
-    for(int i = 0; i < 7; i++){
-        int x = kwota/liczby[i];
-        cout<<x<<" - "<<tab[i]<<endl;
-
-        kwota = kwota - (tab[i]*x);
+int potega(int podstawa, int wykladnik){
+    if(wykladnik == 0){
+        return 1;
+    }else{
+        return potega(podstawa, wykladnik-1)*podstawa;
     }
 }
 
-void to_dec(string liczba, int system){
-    int p = 1;
-    int x;
-    int wynik = 0;
 
-    for(int i = liczba.length()-1; i >=0; i--){
-        if( (int)liczba[i] > 48 && (int)liczba[i] < 58){
-            x = int(liczba[i]);
-        }else{
-            x = int(liczba[i]-55);
-        }
-        wynik+=x*p;
-        p*=system;
+int matura(int ile){
+    int a = 9;
+    for(int i = ile - 1; i > 0; i--){
+        a+=potega(10, i)*9;
     }
+    return a;
+}
 
-    cout<<wynik;
+
+int dl(int a){
+    int c = 0;
+    while(a){
+        c++;
+        a/=10;
+    }
+    return c;
 }
 
 int main()
 {
-    int a=9,b;
     cin>>b;
 
-    for(int i = 0; i < b*10; i=i+10){
-        a+=i*9;
-    }
-    cout<<a;
+    cout<<matura(dl(b))-b;
 
     return 0;
 }
