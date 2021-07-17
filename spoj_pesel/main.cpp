@@ -15,11 +15,11 @@ char zadanie(string pesel){
             }else if(j == 3 || j == 7){
                 liczba = (char(pesel[j]) - '0')*9;
             }else{
-                liczba = (char(pesel[j]) - '0');
+                liczba = (char(pesel[j]) - '0')*1;
             }
             suma+=liczba;
         }
-        if(suma%2 == 0 && suma % 5 == 0 && suma > 0){
+        if(suma%2 == 0 && suma % 5 == 0 && suma >= 0){
             return 'D';
         }else{
             return 'N';
