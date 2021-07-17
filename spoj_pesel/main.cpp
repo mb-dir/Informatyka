@@ -4,7 +4,7 @@ using namespace std;
 
 int t, suma = 0;
 
-string zadanie(string pesel){
+char zadanie(string pesel){
     for(int j = 0; j < 11; j++){
             int liczba;
             if( (j == 1) || (j == 5) || (j == 9)){
@@ -19,10 +19,10 @@ string zadanie(string pesel){
             }
             suma+=liczba;
         }
-        if(suma%2 == 0 && suma % 5 == 0){
-            return "D";
+        if(suma%2 == 0 && suma % 5 == 0 && suma > 0){
+            return 'D';
         }else{
-            return "N";
+            return 'N';
         }
 }
 
