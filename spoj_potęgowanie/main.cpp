@@ -3,14 +3,6 @@
 
 using namespace std;
 
-long double potegowanie(int a, int b){
-    if(b == 0){
-        return 1;
-    }else{
-        return potegowanie(a, --b) * a;
-    }
-}
-
 int d,a,b;
 
 int main()
@@ -39,27 +31,52 @@ int main()
         }else if(x == 2){
             int tabl[4] = {2,4,8,6};
             int a = tab[i+1]%4;
-            cout<<tabl[a-1]<<endl;
+            if(a == 0){
+                cout<<tabl[3]<<endl;
+            }else{
+                cout<<tabl[a-1]<<endl;
+            }
         }else if(x == 3){
             int tabl[4] = {3,9,7,1};
             int a = tab[i+1]%4;
-            cout<<tabl[a-1]<<endl;
+            if(a == 0){
+                cout<<tabl[3]<<endl;
+            }else{
+                cout<<tabl[a-1]<<endl;
+            }
         }else if(x == 4){
             int tabl[2] = {4,6};
             int a = tab[i+1]%2;
-            cout<<tabl[a-1]<<endl;
+            if(a == 0){
+                cout<<tabl[1]<<endl;
+            }else{
+                cout<<tabl[a-1]<<endl;
+            }
         }else if(x == 7){
             int tabl[4] = {7,9,3,1};
             int a = tab[i+1]%4;
-            cout<<tabl[a-1]<<endl;
+
+            if(a == 0){
+                cout<<tabl[3]<<endl;
+            }else{
+                cout<<tabl[a-1]<<endl;
+            }
         }else if(x == 8){
             int tabl[4] = {8,4,2,6};
             int a = tab[i+1]%4;
-            cout<<tabl[a-1]<<endl;
+            if(a == 0){
+                cout<<tabl[3]<<endl;
+            }else{
+                cout<<tabl[a-1]<<endl;
+            }
         }else if(x == 9){
             int tabl[2] = {9,1};
             int a = tab[i+1]%2;
-            cout<<tabl[a-1]<<endl;
+            if(a == 0){
+                cout<<tabl[1]<<endl;
+            }else{
+                cout<<tabl[a-1]<<endl;
+            }
         }
     }
     return 0;
