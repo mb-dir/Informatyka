@@ -1,3 +1,4 @@
+//http://matematykainnegowymiaru.pl/open/lekcje.php?mode=pokaz&id=70
 #include <iostream>
 
 using namespace std;
@@ -24,25 +25,41 @@ int main()
         tab[i+1] = b;
     }
 
-
     for(int i = 0; i < 2*d; i+=2){
-        if(tab[i+1] >= 10){
-            if(tab[i] > 10){
-                cout<<tab[i]%10<<endl;
-            }else if(tab[i] < 10){
-                cout<<tab[i]<<endl;
-            }else{
-                cout<<0;
-            }
-        }else{
-            int x = potegowanie(tab[i],tab[i+1]);
-            if(x > 10){
-                cout<<x%10<<endl;
-            }else if (x<10){
-                cout<<x<<endl;
-            }else{
-                cout<<0;
-            }
+        //ostatnia cyfra podstawy
+        int x = tab[i]%10;
+        if(x == 0){
+            cout<<0<<endl;
+        }else if(x == 1){
+            cout<<1<<endl;
+        }else if(x == 5){
+            cout<<5<<endl;
+        }else if(x == 6){
+            cout<<6<<endl;
+        }else if(x == 2){
+            int tabl[4] = {2,4,8,6};
+            int a = tab[i+1]%4;
+            cout<<tabl[a-1]<<endl;
+        }else if(x == 3){
+            int tabl[4] = {3,9,7,1};
+            int a = tab[i+1]%4;
+            cout<<tabl[a-1]<<endl;
+        }else if(x == 4){
+            int tabl[2] = {4,6};
+            int a = tab[i+1]%2;
+            cout<<tabl[a-1]<<endl;
+        }else if(x == 7){
+            int tabl[4] = {7,9,3,1};
+            int a = tab[i+1]%4;
+            cout<<tabl[a-1]<<endl;
+        }else if(x == 8){
+            int tabl[4] = {8,4,2,6};
+            int a = tab[i+1]%4;
+            cout<<tabl[a-1]<<endl;
+        }else if(x == 9){
+            int tabl[2] = {9,1};
+            int a = tab[i+1]%2;
+            cout<<tabl[a-1]<<endl;
         }
     }
     return 0;
