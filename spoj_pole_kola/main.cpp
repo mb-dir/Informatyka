@@ -1,15 +1,15 @@
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
-float r,d;
-
+long double r,d;
+float pi = 3.141592654;
 int main()
 {
     cin>>r>>d;
 
-    cout<<(r*r-((d*d)/4))*M_PI;
+    long double x = (r*r-((d*d)/4))*pi;
+    cout<<x<<endl;
 
     return 0;
 }
