@@ -8,15 +8,18 @@ void zad(string slowo){
     int len = slowo.length();
     int dl_ciagu = 1;
 
-    for(int i = 1; i <= len; i++){
-        if(slowo[i] == slowo[i-1]){
+    for(int i = 0; i < len; i++){
+        if(slowo[i] == slowo[i+1]){
             dl_ciagu++;
+            if(i == len - 2 && dl_ciagu == 2){
+                cout<<slowo[i];
+            }
         }else{
-            if(dl_ciagu > 1){
-                cout<<slowo[i-1]<<dl_ciagu;
+            if(dl_ciagu > 2){
+                cout<<slowo[i]<<dl_ciagu;
                 dl_ciagu = 1;
             }else{
-                cout<<slowo[i-1];
+                cout<<slowo[i]; //AAAAAAAAAABBBBBBBBBBBBBBBB
                 dl_ciagu = 1;
             }
         }
