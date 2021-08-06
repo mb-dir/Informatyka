@@ -11,7 +11,7 @@ void zad(string slowo){
     for(int i = 0; i < len; i++){
         if(slowo[i] == slowo[i+1]){
             dl_ciagu++;
-            if(i == len - 2 && dl_ciagu == 2){
+            if(i == len - 2 && dl_ciagu < 2){
                 cout<<slowo[i];
             }
         }else{
@@ -19,8 +19,13 @@ void zad(string slowo){
                 cout<<slowo[i]<<dl_ciagu;
                 dl_ciagu = 1;
             }else{
-                cout<<slowo[i]; //AAAAAAAAAABBBBBBBBBBBBBBBB
-                dl_ciagu = 1;
+                if(dl_ciagu == 2){
+                    cout<<slowo[i]<<slowo[i];
+                    dl_ciagu = 1;
+                }else{
+                    cout<<slowo[i];
+                    dl_ciagu = 1;
+                }
             }
         }
     }
