@@ -17,9 +17,7 @@ int nww(int x, int y){
     return (x*y)/nwd(x,y);
 }
 
-void solve(){
-    int a,b;
-    cin>>a>>b;
+void solve(int a, int b){
     cout<<nww(a,b);
 }
 
@@ -28,8 +26,16 @@ int main()
 {
     cin>>n;
 
+    int tab[n][2];
     for(int i = 0; i < n; i++){
-        solve();
+        for(int j = 0; j < 2; j++){
+            cin>>tab[i][j];
+        }
+    }
+
+    for(int i = 0; i < n; i++){
+        solve(tab[i][0], tab[i][1]);
+        cout<<endl;
     }
     return 0;
 }
