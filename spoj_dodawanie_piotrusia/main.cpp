@@ -26,12 +26,7 @@ int dodaj_palindrom(int a){
     return a + std::stoi(s);
 }
 
-int main()
-{
-
-    int a;
-    cin>>a;
-
+int solve(int a){
     if(a < 10){
     cout<<a<<" "<<0;
         return 0;
@@ -48,5 +43,23 @@ int main()
         }
         c++;
     }
+}
+
+int main()
+{
+
+    int a;
+    cin>>a;
+    int tab[a];
+
+    for(int i = 0; i < a; i++){
+        cin>>tab[i];
+    }
+    for(int i = 0; i < a; i++){
+        solve(tab[i]);
+        cout<<endl;
+    }
+
+
     return 0;
 }
