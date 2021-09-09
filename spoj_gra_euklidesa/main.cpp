@@ -2,10 +2,9 @@
 
 using namespace std;
 
-int a = 1, b = 1;
+int t;
 
-int main()
-{
+void solve(int a, int b){
     while(a!=b){
         if(a > b){
             a = a-b;
@@ -13,6 +12,20 @@ int main()
             b = b-a;
         }
     }
-    cout<<a+b;
+    cout<<a+b<<endl;
+}
+
+int main()
+{
+    cin>>t;
+    int arr[2*t];
+    for(int i = 0; i < 2*t; i+=2){
+        cin>>arr[i]>>arr[i+1];
+    }
+
+    for(int i = 0; i < 2*t; i+=2){
+        solve(arr[i], arr[i+1]);
+    }
+
     return 0;
 }
