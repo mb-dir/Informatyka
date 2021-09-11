@@ -3,46 +3,36 @@
 
 using namespace std;
 
-bool czyZnaczaca(int a){
-    float pierwiastek = sqrt(a);
-    float suma_dzielnikow = 0;
-    float ile_dzielnikow = 0;
-    for(int i = 2; i <=a/2; i++){
-        if(a%i == 0){
-            suma_dzielnikow+=i;
-            ile_dzielnikow++;
+bool czyPierwsza(long long a){
+    for(int i = 2; i < sqrt(a); i++){
+        if(a%i==0){
+            return false;
         }
     }
-    float srednia_arytm = suma_dzielnikow/ile_dzielnikow;
-
-    if(srednia_arytm <= pierwiastek){
-        return true;
-    }else{
-        return false;
-    }
+    return true;
 }
 
-void solve(int a, int b){
-    int ile = 0;
-    for(int i = a; i <=b; i++){
-        if(czyZnaczaca(i)){
+void solve(long long a, long long b){
+    long long ile = 0;
+    for(long long i = a; i <=b; i++){
+        if(czyPierwsza(i)){
             ile++;
         }
     }
     cout<<ile<<endl;
 }
 
-int t;
+long long t;
 
 int main()
 {
     cin>>t;
-    int tab[2*t];
+    long long tab[2*t];
 
-    for(int i = 0; i < 2*t; i+=2){
+    for(long long i = 0; i < 2*t; i+=2){
         cin>>tab[i]>>tab[i+1];
     }
-    for(int i = 0; i < 2*t; i+=2){
+    for(long long i = 0; i < 2*t; i+=2){
         solve(tab[i],tab[i+1]);
     }
     return 0;
