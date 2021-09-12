@@ -3,8 +3,11 @@
 
 using namespace std;
 
-bool czyPierwsza(long long a){
-    for(int i = 2; i < sqrt(a); i++){
+bool czyPierwsza(int a){
+    if(a == 1){
+        return false;
+    }
+    for(int i = 2; i <= sqrt(a); i++){
         if(a%i==0){
             return false;
         }
@@ -12,9 +15,9 @@ bool czyPierwsza(long long a){
     return true;
 }
 
-void solve(long long a, long long b){
-    long long ile = 0;
-    for(long long i = a; i <=b; i++){
+void solve(int a, int b){
+    int ile = 0;
+    for(int i = sqrt(a); i < sqrt(b); i++){
         if(czyPierwsza(i)){
             ile++;
         }
@@ -22,17 +25,17 @@ void solve(long long a, long long b){
     cout<<ile<<endl;
 }
 
-long long t;
+int t;
 
 int main()
 {
     cin>>t;
-    long long tab[2*t];
+    int tab[2*t];
 
-    for(long long i = 0; i < 2*t; i+=2){
+    for(int i = 0; i < 2*t; i+=2){
         cin>>tab[i]>>tab[i+1];
     }
-    for(long long i = 0; i < 2*t; i+=2){
+    for(int i = 0; i < 2*t; i+=2){
         solve(tab[i],tab[i+1]);
     }
     return 0;
