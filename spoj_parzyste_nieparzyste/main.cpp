@@ -2,6 +2,19 @@
 
 using namespace std;
 
+void solve(int tab[], int a){
+    for(int d = 1; d < a; d+=2){
+            cout<<tab[d]<<" ";
+        }
+        for(int d = 0; d < a; d+=2){
+            if(d==a){
+                cout<<tab[d]<<endl;
+            }else{
+                cout<<tab[d]<<" ";
+            }
+        }
+}
+
 int t;
 
 int main()
@@ -14,16 +27,7 @@ int main()
         for(int j = 0; j < a; j++){
             cin>>tab[j];
         }
-        for(int d = 1; d < a; d+=2){
-            cout<<tab[d]<<" ";
-        }
-        for(int d = 0; d < a; d+=2){
-            if(d==a){
-                cout<<tab[d]<<endl;
-            }else{
-                cout<<tab[d]<<" ";
-            }
-        }
+        solve(tab,a);
     }
     return 0;
 }
