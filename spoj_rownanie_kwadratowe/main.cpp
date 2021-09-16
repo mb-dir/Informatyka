@@ -12,9 +12,13 @@ void solve(float a, float b, float c){
         cout<<1<<endl;
     }
 }
-int t;
+float a,b,c;
 int main()
 {
-    solve(-0.5, -0.5, 0);
+    while (cin >> a >> b >> c){
+        solve(a,b,c);
+    }
+
+
     return 0;
 }
