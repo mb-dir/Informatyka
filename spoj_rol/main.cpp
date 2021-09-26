@@ -14,7 +14,18 @@ int main()
         cin>>tab1[i];
     }
     for(int i = 0; i < n; i++){
-        cout<<tab1[i]<<endl;
+        int p;
+        if(i - k < 0){
+            p = i-k+n;
+        }else{
+            p = i-k;
+        }
+        //cout<<"p: "<<p<<endl;
+
+        tab2[p] = tab1[i];
+    }
+    for(int i = 0; i < n; i++){
+        cout<<tab2[i]<<" ";
     }
     return 0;
 }
