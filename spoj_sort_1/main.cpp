@@ -1,24 +1,41 @@
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
-int x[2];
-int y[2];
+int t;
+
+struct point {   // Declare PERSON struct type
+    int X;
+    long Y;
+    string ID;
+};
 
 int main()
 {
-    cout<<"Podaj x:";
-    cin>>x[0]>>x[1];
+    cin>>t;
 
-    cout<<"Podaj y:";
-    cin>>y[0]>>y[1];
+    for(int i = 0; i < t; i++){
+        int n;
+        cin>>n;
 
-    if(x[0]+x[1] > y[0]+y[1]){
-        cout<<"punkt x jest dalej"<<endl;
-    }else if(x[0]+x[1] < y[0]+y[1]){
-        cout<<"punkt y jest dalej"<<endl;
-    }else{
-        cout<<"taka sama odleglosc"<<endl;
+        //Cuz x and y
+        int tabPkt[n];
+
+        for(int j = 0; j < n; j++){
+            int x,y;
+            string id;
+
+            cin>>id>>x>>y;
+
+            point newPoint;
+
+            newPoint.X = x;
+            newPoint.Y = y;
+            newPoint.ID = id;
+
+            tabPkt[j] = newPoint;
+        }
     }
     return 0;
 }
