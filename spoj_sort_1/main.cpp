@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <math.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,6 +14,9 @@ struct point {   // Declare PERSON struct type
     string ID;
 };
 
+bool sortPoints(point one, point two){
+    return one.R < two.R;
+}
 
 int main()
 {
@@ -40,17 +44,7 @@ int main()
 
             tabPkt[j] = newPoint;
         }
-        for(int p = 0; p < n; p++){
-            for(int c = 0; c < n-1; c++){
-                cout<<"R dla "<<tabPkt[c].ID<<": "<<tabPkt[c].R<<", R dla "<<tabPkt[c+1].ID<<": "<<tabPkt[c+1].R<<endl;
-                if(tabPkt[c].R > tabPkt[c+i].R){
-                    cout<<"Zamiana"<<endl;
-                    point z = tabPkt[c];
-                    tabPkt[c] = tabPkt[c+1];
-                    tabPkt[c+1] = z;
-                }
-            }
-        }
+        sort(tabPkt, tabPkt+n, sortPoints);
 
         for(int j = 0; j < n; j++){
             cout<<tabPkt[j].ID<<" ("<<tabPkt[j].X<<", "<<tabPkt[j].Y<<"), r: "<<tabPkt[j].R<<endl;
