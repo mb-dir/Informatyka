@@ -20,7 +20,7 @@ int main()
         cin>>n;
 
         //Cuz x and y
-        int tabPkt[n];
+        point tabPkt[n];
 
         for(int j = 0; j < n; j++){
             int x,y;
@@ -35,6 +35,10 @@ int main()
             newPoint.ID = id;
 
             tabPkt[j] = newPoint;
+        }
+
+        for(int j = 0; j < n; j++){
+            cout<<tabPkt[j].ID<<" ("<<tabPkt[j].X<<", "<<tabPkt[j].Y<<")"<<endl;
         }
     }
     return 0;
