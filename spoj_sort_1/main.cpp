@@ -47,7 +47,7 @@ int main()
         sort(tabPkt, tabPkt+n, sortPoints);
 
         for(int j = 0; j < n; j++){
-            cout<<tabPkt[j].ID<<" ("<<tabPkt[j].X<<", "<<tabPkt[j].Y<<"), r: "<<tabPkt[j].R<<endl;
+            cout<<tabPkt[j].ID<<" "<<tabPkt[j].X<<" "<<tabPkt[j].Y<<endl;
         }
     }
     return 0;
