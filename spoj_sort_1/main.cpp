@@ -7,15 +7,20 @@ using namespace std;
 
 int t;
 
-struct point {   // Declare PERSON struct type
+struct point {
     int X;
     long Y;
-    int R;
+    float R;
     string ID;
 };
 
 bool sortPoints(point one, point two){
     return one.R < two.R;
+}
+
+float getTheVector(int a, int b){
+    float c2 = a*a + b*b;
+    return sqrt(c2);
 }
 
 int main()
@@ -39,7 +44,14 @@ int main()
 
             newPoint.X = x;
             newPoint.Y = y;
-            newPoint.R = abs(x*y);
+
+            if(x == 0){
+                newPoint.R = abs(y);
+            }else if(y == 0){
+                newPoint.R = abs(x);
+            }else{
+                newPoint.R = getTheVector(x,y);
+            }
             newPoint.ID = id;
 
             tabPkt[j] = newPoint;
