@@ -38,5 +38,7 @@ int main()
     for(int i = 0; i < nwwArrLen; i++){
         printf("%d\n", nwwArrValues[i]);
     }
+
+    printf("%d", (nwwArrValues[0]*nwwArrValues[1])/nwd(nwwArrValues[0], nwwArrValues[1]));
     return 0;
 }
