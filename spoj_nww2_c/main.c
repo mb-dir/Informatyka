@@ -15,30 +15,31 @@ int nwd(int a, int b){
 
 int main()
 {
-    int a;
-    scanf("%d", &a);
+    int n;
 
-    int tab[a];
+    scanf("%d",&n);
+    for(int u = 0; u<n;u++){
+        int a;
+        scanf("%d", &a);
 
-    for(int i = 0; i < a; i++){
-        scanf("%d", &tab[i]);
-    }
+        int tab[a];
 
-    int nwwArrLen = (a*(a-1))/2;
-
-    int nwwArrValues[nwwArrLen];
-
-    for(int i = 0; i < a-1; i++){
-        for(int j = i+1; j < a; j++){
-            int nww = (tab[i]*tab[j])/nwd(tab[i],tab[j]);
-            nwwArrValues[i+j-1] = nww;
+        for(int i = 0; i < a; i++){
+            scanf("%d", &tab[i]);
         }
-    }
 
-    for(int i = 0; i < nwwArrLen; i++){
-        printf("%d\n", nwwArrValues[i]);
-    }
+        int nwwArrLen = (a*(a-1))/2;
 
-    printf("%d", (nwwArrValues[0]*nwwArrValues[1])/nwd(nwwArrValues[0], nwwArrValues[1]));
+        int nwwArrValues[nwwArrLen];
+
+        for(int i = 0; i < a-1; i++){
+            for(int j = i+1; j < a; j++){
+                int nww = (tab[i]*tab[j])/nwd(tab[i],tab[j]);
+                nwwArrValues[i+j-1] = nww;
+            }
+        }
+
+        printf("%d", (nwwArrValues[0]*nwwArrValues[1])/nwd(nwwArrValues[0], nwwArrValues[1]));
+    }
     return 0;
 }
