@@ -22,15 +22,15 @@ int main()
         int a;
         scanf("%d", &a);
 
-        int tab[a];
+        unsigned long long int tab[a];
 
         for(int i = 0; i < a; i++){
-            scanf("%d", &tab[i]);
+            scanf("%llu", &tab[i]);
         }
 
         int nwwArrLen = (a*(a-1))/2;
 
-        int nwwArrValues[nwwArrLen];
+        unsigned long long int nwwArrValues[nwwArrLen];
 
         for(int i = 0; i < a-1; i++){
             for(int j = i+1; j < a; j++){
@@ -39,7 +39,7 @@ int main()
             }
         }
 
-        printf("%d", (nwwArrValues[0]*nwwArrValues[1])/nwd(nwwArrValues[0], nwwArrValues[1]));
+        printf("%llu\n", (nwwArrValues[0]*nwwArrValues[1])/nwd(nwwArrValues[0], nwwArrValues[1]));
     }
     return 0;
 }
