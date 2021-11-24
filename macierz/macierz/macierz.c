@@ -10,11 +10,13 @@ int main()
     int y = 0;
     for (int i=0, a = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            x += A[i][j]*B[a][j];
-            a++;
+            x += A[i][j]*B[a][i];
             y = j;
+            a++;
         }
-        C[i][y] = x;
+        C[i][i] = x;
+        a = 0;
+        x = 0;
     }
 
     for (int i = 0; i < 3; i++) {
