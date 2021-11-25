@@ -7,16 +7,14 @@ int main()
     int B[3][3] = { 9,8,7,6,5,4,3,2,1 };
     int C[3][3] = { 0 };
     int x = 0;
-    int y = 0;
-    for (int i=0, a = 0; i < 3; i++) {
+    for (int i = 0,a = 0, b = 0; i < 9; i++) {
         for (int j = 0; j < 3; j++) {
-            x += A[i][j]*B[a][i];
-            y = j;
-            a++;
+            x += A[a][j]*B[j][a];
         }
-        C[i][i] = x;
-        a = 0;
+        C[a][b] = x;
         x = 0;
+        b++;
+        a++;
     }
 
     for (int i = 0; i < 3; i++) {
