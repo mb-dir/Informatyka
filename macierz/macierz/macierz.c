@@ -8,14 +8,13 @@ int main()
     int C[3][3] = { 0 };
     int x = 0;
 
-    for (int i = 0, a = 0; i < 9; i++) {
+    for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 3; j++) {
-            x += A[i/3][j]*B[j][i/3];
+            x += A[i/3][j]*B[j][i%3];
         }
-        int b = i;
-        C[i%3][i] = x;
+        
+        C[i/3][i%3] = x;
         x = 0;
-        a++;
     }
 
     for (int i = 0; i < 3; i++) {
