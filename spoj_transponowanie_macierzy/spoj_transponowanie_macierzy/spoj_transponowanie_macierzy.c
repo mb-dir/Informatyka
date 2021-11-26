@@ -13,10 +13,9 @@ int main() {
 			*(A + i * b + j) = c;
 		}
 	}
-
-	for (int i = 0; i < a; i++) {
-		for (int j = 0; j < b; j++) {
-			printf("%d ", *(A + i * b + j));
+	for (int i = 0; i < b; i++) {
+		for (int j = 0; j < a; j++) {
+			printf("%d ", *(A + j * b + i));
 		}printf("\n");
 	}
 
